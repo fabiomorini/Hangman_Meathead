@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
 class Login : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
 
-    private val CORRECT_USERNAME = "abcd"
+    private val CORRECT_MAIL = "a@a.a"
     private val CORRECT_PASSWORD = "1234"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,10 +25,10 @@ class Login : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.buttonLogin.setOnClickListener {
-            val username = binding.inputUsername.text.toString()
+            val mail = binding.inputMail.text.toString()
             val password = binding.inputPassword.text.toString()
 
-            if (username == CORRECT_USERNAME && password == CORRECT_PASSWORD) {
+            if (mail == CORRECT_MAIL && password == CORRECT_PASSWORD) {
                 //Se hace login
                 binding.progressBar.visibility = View.VISIBLE
 
@@ -46,14 +46,14 @@ class Login : AppCompatActivity() {
             }
         }
 
-        binding.inputUsername.setOnFocusChangeListener { view, hasFocus ->
+        binding.inputMail.setOnFocusChangeListener { view, hasFocus ->
 
             if (!hasFocus) {
-                val username = binding.inputUsername.text.toString()
-                if (!Patterns.EMAIL_ADDRESS.matcher(username).matches()) {
-                    binding.inputUsername.error = "Formato de email incorrecto!"
+                val mail = binding.inputMail.text.toString()
+                if (!Patterns.EMAIL_ADDRESS.matcher(mail).matches()) {
+                    binding.inputMail.error = "Formato de email incorrecto!"
                 } else {
-                    binding.inputUsername.error = null
+                    binding.inputMail.error = null
                 }
             }
         }
