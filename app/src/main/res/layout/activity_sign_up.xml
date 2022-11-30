@@ -14,5 +14,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/asset_2" />
+        app:srcCompat="@drawable/signup_background" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
