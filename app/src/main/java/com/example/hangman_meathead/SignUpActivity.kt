@@ -21,11 +21,13 @@ class SignUpActivity : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
 
-        binding.loginButton.setOnClickListener {
+        binding.singUpButton.setOnClickListener {
+
+            val username = binding.inputUsername.text.toString()
             val mail = binding.inputMail.text.toString()
             val password = binding.inputPassword.text.toString()
 
-            firebaseAuth.signInWithEmailAndPassword(mail, password)
+            firebaseAuth.createUserWithEmailAndPassword(mail, password)
                 .addOnSuccessListener {
                     val intentMain = Intent(this@SignUpActivity, MainActivity::class.java)
                     startActivity(intentMain)
@@ -33,7 +35,7 @@ class SignUpActivity : AppCompatActivity() {
                     finish()
 
                 }.addOnFailureListener {
-                    Toast.makeText(this, "Login incorrecto!", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Ha ocurrido un problema!", Toast.LENGTH_LONG).show()
                 }
         }
 
@@ -49,12 +51,8 @@ class SignUpActivity : AppCompatActivity() {
             }
         }
 
-        binding.forgotPasswordButton.setOnClickListener{
-            Toast.makeText(this, "Under construction!", Toast.LENGTH_LONG).show()
-        }
-
-        binding.signUpButton.setOnClickListener{
-            val intentMain = Intent(this@LoginActivity, SignU::class.java)
+        binding.logInButton.setOnClickListener{
+            val intentMain = Intent(this@SignUpActivity, LoginActivity::class.java)
             startActivity(intentMain)
 
             finish()
