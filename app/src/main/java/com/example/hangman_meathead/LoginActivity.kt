@@ -7,13 +7,15 @@ import android.util.Patterns
 import android.view.View
 import android.widget.Toast
 import com.example.hangman_meathead.databinding.ActivityLoginBinding
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-class Login : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
+    private lateinit var firebaseAuth: FirebaseAuth
 
     private val CORRECT_MAIL = "a@a.a"
     private val CORRECT_PASSWORD = "1234"
@@ -24,24 +26,20 @@ class Login : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        firebaseAuth = FirebaseAuth.getInstance()
+
         binding.buttonLogin.setOnClickListener {
             val mail = binding.inputMail.text.toString()
             val password = binding.inputPassword.text.toString()
 
-            if (mail == CORRECT_MAIL && password == CORRECT_PASSWORD) {
-                //Se hace login
-                binding.progressBar.visibility = View.VISIBLE
+            firebaseAuth.signInWithEmailAndPassword(mail, password)
+            .addOnSuccessListener {
+                val intentMain = Intent(this@LoginActivity, MainActivity::class.java)
+                startActivity(intentMain)
 
-                CoroutineScope(Dispatchers.Default).launch {
-                    delay(3000)
+                finish()
 
-                    val intentMain = Intent(this@Login, MainActivity::class.java)
-                    startActivity(intentMain)
-
-                    finish()
-                }
-
-            } else {
+            }.addOnFailureListener {
                 Toast.makeText(this, "Login incorrecto!", Toast.LENGTH_LONG).show()
             }
         }
