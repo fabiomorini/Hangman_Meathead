@@ -25,7 +25,7 @@ class LoginActivity : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
 
-        binding.buttonLogin.setOnClickListener {
+        binding.loginButton.setOnClickListener {
             val mail = binding.inputMail.text.toString()
             val password = binding.inputPassword.text.toString()
 
@@ -51,6 +51,17 @@ class LoginActivity : AppCompatActivity() {
                     binding.inputMail.error = null
                 }
             }
+        }
+
+        binding.forgotPasswordButton.setOnClickListener{
+            Toast.makeText(this, "Under construction!", Toast.LENGTH_LONG).show()
+        }
+
+        binding.signUpButton.setOnClickListener{
+            val intentMain = Intent(this@LoginActivity, SignUpActivity::class.java)
+            startActivity(intentMain)
+
+            finish()
         }
     }
 
