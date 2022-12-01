@@ -7,15 +7,17 @@ import android.util.Patterns
 import android.view.View
 import android.widget.Toast
 import com.example.hangman_meathead.databinding.ActivityLoginBinding
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-class Login : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
+    private lateinit var firebaseAuth: FirebaseAuth
 
-    private val CORRECT_USERNAME = "abcd"
+    private val CORRECT_MAIL = "a@a.a"
     private val CORRECT_PASSWORD = "1234"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,36 +26,32 @@ class Login : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        firebaseAuth = FirebaseAuth.getInstance()
+
         binding.buttonLogin.setOnClickListener {
-            val username = binding.inputUsername.text.toString()
+            val mail = binding.inputMail.text.toString()
             val password = binding.inputPassword.text.toString()
 
-            if (username == CORRECT_USERNAME && password == CORRECT_PASSWORD) {
-                //Se hace login
-                binding.progressBar.visibility = View.VISIBLE
+            firebaseAuth.signInWithEmailAndPassword(mail, password)
+            .addOnSuccessListener {
+                val intentMain = Intent(this@LoginActivity, MainActivity::class.java)
+                startActivity(intentMain)
 
-                CoroutineScope(Dispatchers.Default).launch {
-                    delay(3000)
+                finish()
 
-                    val intentMain = Intent(this@Login, MainActivity::class.java)
-                    startActivity(intentMain)
-
-                    finish()
-                }
-
-            } else {
+            }.addOnFailureListener {
                 Toast.makeText(this, "Login incorrecto!", Toast.LENGTH_LONG).show()
             }
         }
 
-        binding.inputUsername.setOnFocusChangeListener { view, hasFocus ->
+        binding.inputMail.setOnFocusChangeListener { view, hasFocus ->
 
             if (!hasFocus) {
-                val username = binding.inputUsername.text.toString()
-                if (!Patterns.EMAIL_ADDRESS.matcher(username).matches()) {
-                    binding.inputUsername.error = "Formato de email incorrecto!"
+                val mail = binding.inputMail.text.toString()
+                if (!Patterns.EMAIL_ADDRESS.matcher(mail).matches()) {
+                    binding.inputMail.error = "Formato de email incorrecto!"
                 } else {
-                    binding.inputUsername.error = null
+                    binding.inputMail.error = null
                 }
             }
         }
