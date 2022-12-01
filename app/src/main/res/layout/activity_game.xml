@@ -39,18 +39,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/pause" />
 
-    <ImageButton
-        android:id="@+id/imageButton7"
-        android:layout_width="517dp"
-        android:layout_height="399dp"
-        android:layout_marginBottom="-55dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="fitCenter"
-        android:src="@android:drawable/btn_star"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:src="@drawable/background_letters" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView10"
+        app:srcCompat="@drawable/asset_4" />
 
     <ImageButton
         android:id="@+id/imageButton8"
@@ -112,8 +111,10 @@
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="270dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="506dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintGuide_begin="460dp" />
 
     <ImageButton
         android:id="@+id/a"
@@ -499,10 +500,4 @@
         android:orientation="vertical"
         app:layout_constraintGuide_begin="16dp" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="757dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
