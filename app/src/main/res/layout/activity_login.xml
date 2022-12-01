@@ -86,8 +86,8 @@
 
     <ImageButton
         android:id="@+id/imageButton3"
-        android:layout_width="275dp"
-        android:layout_height="98dp"
+        android:layout_width="280dp"
+        android:layout_height="105dp"
         android:backgroundTint="#00FFFFFF"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
