@@ -41,8 +41,9 @@
         android:layout_marginTop="320dp"
         android:background="@drawable/login_input"
         android:hint="Email"
-        android:textColorHint="#000000"
+        android:textColorHint="#4E5052"
         app:boxBackgroundMode="none"
+        app:hintTextColor="#9E4539"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -56,10 +57,10 @@
             android:foregroundTint="#00FFFFFF"
             android:singleLine="true"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor= "#FF000000"
-            android:textColorHighlight="#FF000000"
-            android:textColorHint="#FF000000"
-            android:textColorLink="#FF000000"
+            android:textColor="#4E5052"
+            android:textColorHighlight="#4E5052"
+            android:textColorHint="#4E5052"
+            android:textColorLink="#4E5052"
             android:translationX="40dp"
             android:translationY="-12dp" />
 
@@ -70,10 +71,11 @@
         android:layout_width="220dp"
         android:layout_height="60dp"
         android:layout_marginTop="16dp"
-        android:foreground="@drawable/password_input"
+        android:background="@drawable/password_input"
         android:hint="Password"
-        android:textColorHint="#FF000000"
+        android:textColorHint="#4E5052"
         app:boxBackgroundMode="none"
+        app:hintTextColor="#9E4539"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputMailWraper">
@@ -84,7 +86,7 @@
             android:layout_height="wrap_content"
             android:password="true"
             android:singleLine="true"
-            android:textColor="#FF000000"
+            android:textColor="#4E5052"
             android:translationX="40dp"
             android:translationY="-12dp" />
     </com.google.android.material.textfield.TextInputLayout>

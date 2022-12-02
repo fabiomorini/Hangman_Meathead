@@ -73,8 +73,9 @@
         android:layout_marginTop="64dp"
         android:background="@drawable/login_input"
         android:hint="Name"
-        android:textColorHint="#80f"
+        android:textColorHint="#4E5052"
         app:boxBackgroundMode="none"
+        app:hintTextColor="#9E4539"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signUpImageView">
@@ -84,7 +85,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:singleLine="true"
-            android:textColor="#80f"
+            android:textColor="#4E5052"
             android:translationX="40dp"
             android:translationY="-12dp" />
 
@@ -97,8 +98,9 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/email"
         android:hint="Email"
-        android:textColorHint="#80f"
+        android:textColorHint="#4E5052"
         app:boxBackgroundMode="none"
+        app:hintTextColor="#9E4539"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputNameWraper">
@@ -108,7 +110,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:singleLine="true"
-            android:textColor="#80f"
+            android:textColor="#4E5052"
             android:translationX="40dp"
             android:translationY="-12dp" />
 
@@ -121,8 +123,9 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/email"
         android:hint="Password"
-        android:textColorHint="#80f"
+        android:textColorHint="#4E5052"
         app:boxBackgroundMode="none"
+        app:hintTextColor="#9E4539"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputSignUpMailWraper">
@@ -133,7 +136,7 @@
             android:layout_height="wrap_content"
             android:password="true"
             android:singleLine="true"
-            android:textColor="#80f"
+            android:textColor="#4E5052"
             android:translationX="40dp"
             android:translationY="-12dp" />
     </com.google.android.material.textfield.TextInputLayout>
