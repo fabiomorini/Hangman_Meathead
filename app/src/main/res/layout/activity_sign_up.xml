@@ -2,12 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/signUpLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SignUpActivity">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/signUpBackgroundImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
@@ -18,13 +19,13 @@
         app:srcCompat="@drawable/signup_background" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/signUpImageView"
         android:layout_width="120dp"
         android:layout_height="45dp"
         android:layout_marginTop="64dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/signUpBackgroundImageView"
         app:srcCompat="@drawable/signup_text" />
 
     <ImageButton
@@ -42,7 +43,7 @@
         app:srcCompat="@drawable/country" />
 
     <ImageButton
-        android:id="@+id/singUpButton"
+        android:id="@+id/signUpSingUpButton"
         android:layout_width="258dp"
         android:layout_height="77dp"
         android:backgroundTint="#00FFFFFF"
@@ -54,15 +55,15 @@
         app:srcCompat="@drawable/signup_button" />
 
     <ImageButton
-        android:id="@+id/logInButton"
+        android:id="@+id/signUplogInButton"
         android:layout_width="331dp"
         android:layout_height="34dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="#00FFFFFF"
         android:scaleType="centerInside"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="@+id/signUpBackgroundImageView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/singUpButton"
+        app:layout_constraintTop_toBottomOf="@+id/signUpSingUpButton"
         app:srcCompat="@drawable/text_account" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -76,7 +77,7 @@
         app:boxBackgroundMode="none"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8"
+        app:layout_constraintTop_toBottomOf="@+id/signUpImageView"
         app:startIconDrawable="@android:drawable/ic_dialog_info">
 
         <com.google.android.material.textfield.TextInputEditText
