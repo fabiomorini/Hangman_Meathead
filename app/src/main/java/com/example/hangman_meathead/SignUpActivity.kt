@@ -56,6 +56,10 @@ class SignUpActivity : AppCompatActivity() {
 
             finish()
         }
+
+        binding.countryButton.setOnClickListener{
+            Toast.makeText(this, "Under construction!", Toast.LENGTH_LONG).show()
+        }
     }
 
     override fun onStart() {
