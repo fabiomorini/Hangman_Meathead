@@ -5,7 +5,7 @@
     android:id="@+id/loginLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="#00FFFFFF"
+    android:backgroundTint="#FFFFFF"
     tools:context=".LoginActivity">
 
     <ImageView
@@ -13,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
+        android:tintMode="src_in"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -40,18 +41,25 @@
         android:layout_marginTop="320dp"
         android:background="@drawable/login_input"
         android:hint="Email"
-        android:textColorHint="#80f"
+        android:textColorHint="#000000"
         app:boxBackgroundMode="none"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+
             android:id="@+id/input_Mail"
+            style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:foregroundTint="#00FFFFFF"
             android:singleLine="true"
-            android:textColor="#80f"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor= "#FF000000"
+            android:textColorHighlight="#FF000000"
+            android:textColorHint="#FF000000"
+            android:textColorLink="#FF000000"
             android:translationX="40dp"
             android:translationY="-12dp" />
 
@@ -64,7 +72,7 @@
         android:layout_marginTop="16dp"
         android:foreground="@drawable/password_input"
         android:hint="Password"
-        android:textColorHint="#80f"
+        android:textColorHint="#FF000000"
         app:boxBackgroundMode="none"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,13 +84,14 @@
             android:layout_height="wrap_content"
             android:password="true"
             android:singleLine="true"
-            android:textColor="#80f"
+            android:textColor="#FF000000"
             android:translationX="40dp"
             android:translationY="-12dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageButton
         android:id="@+id/forgotPasswordButton"
+        style="@android:style/Widget.DeviceDefault.ImageButton"
         android:layout_width="183dp"
         android:layout_height="33dp"
         android:layout_marginTop="8dp"

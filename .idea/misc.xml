@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/fabio.morini/StudioProjects/Hangman_Meathead/app/src/main/res/layout/activity_game.xml" value="0.17291666666666666" />
+        <entry key="..\:/Users/fabio.morini/StudioProjects/Hangman_Meathead/app/src/main/res/layout/activity_login.xml" value="0.9" />
+        <entry key="..\:/Users/fabio.morini/StudioProjects/Hangman_Meathead/app/src/main/res/layout/activity_main.xml" value="0.3625" />
+        <entry key="..\:/Users/fabio.morini/StudioProjects/Hangman_Meathead/app/src/main/res/layout/activity_quotes.xml" value="0.3625" />
+        <entry key="..\:/Users/fabio.morini/StudioProjects/Hangman_Meathead/app/src/main/res/layout/activity_sign_up.xml" value="0.3625" />
+        <entry key="..\:/Users/fabio.morini/StudioProjects/Hangman_Meathead/app/src/main/res/layout/activity_splash_screen.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/fabio.morini/StudioProjects/Hangman_Meathead/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.332" />
+        <entry key="..\:/Users/fabio.morini/StudioProjects/Hangman_Meathead/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.332" />
         <entry key="..\:/Users/joseadrian.guerra.ENTI/StudioProjects/Hangman_Meathead/app/src/main/res/layout/activity_login.xml" value="0.3625" />
         <entry key="..\:/Users/joseadrian.guerra/Desktop/CDI/Android/Hangman_Meathead/app/src/main/res/layout/activity_main.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/joseadrian.guerra/Desktop/CDI/Interfaces/Hangman_Meathead/app/src/main/res/layout/activity_login.xml" value="0.358695652173913" />
