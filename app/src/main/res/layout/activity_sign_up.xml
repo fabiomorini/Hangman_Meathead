@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".SignUpActivity">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -37,7 +38,7 @@
         android:scaleY="1.5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputPasswordWraper"
+        app:layout_constraintTop_toBottomOf="@+id/inputSignUpPasswordWraper"
         app:srcCompat="@drawable/country" />
 
     <ImageButton
@@ -65,13 +66,13 @@
         app:srcCompat="@drawable/text_account" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputUsernameWraper"
+        android:id="@+id/inputNameWraper"
         android:layout_width="200dp"
         android:layout_height="52dp"
         android:layout_marginTop="64dp"
         android:background="#00FFFFFF"
         android:foreground="@drawable/login_input"
-        android:hint="Username"
+        android:hint="Name"
         app:boxBackgroundMode="none"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -79,7 +80,7 @@
         app:startIconDrawable="@android:drawable/ic_dialog_info">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_username"
+            android:id="@+id/input_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:singleLine="false"
@@ -89,7 +90,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputMailWraper"
+        android:id="@+id/inputSignUpMailWraper"
         android:layout_width="200dp"
         android:layout_height="52dp"
         android:layout_marginTop="16dp"
@@ -99,11 +100,11 @@
         app:boxBackgroundMode="none"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputUsernameWraper"
+        app:layout_constraintTop_toBottomOf="@+id/inputNameWraper"
         app:startIconDrawable="@android:drawable/ic_dialog_info">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_mail"
+            android:id="@+id/input_signUpMail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:singleLine="false"
@@ -113,7 +114,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputPasswordWraper"
+        android:id="@+id/inputSignUpPasswordWraper"
         android:layout_width="200dp"
         android:layout_height="52dp"
         android:layout_marginTop="16dp"
@@ -122,11 +123,11 @@
         app:boxBackgroundMode="none"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputMailWraper"
+        app:layout_constraintTop_toBottomOf="@+id/inputSignUpMailWraper"
         app:startIconDrawable="@android:drawable/ic_dialog_info">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputPassword"
+            android:id="@+id/input_signUpPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:password="true"

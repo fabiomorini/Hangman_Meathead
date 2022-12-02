@@ -16,9 +16,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.buttonToast.setOnClickListener{
-            Toast.makeText(this, "Hola, soy un Toast", Toast.LENGTH_LONG).show()
-        }
+//        binding.buttonToast.setOnClickListener{
+//            Toast.makeText(this, "Hola, soy un Toast", Toast.LENGTH_LONG).show()
+//        }
 
         binding.floatingButton.setOnClickListener{
             Snackbar.make(binding.root, "Hola, soy un Snackbar", Snackbar.LENGTH_LONG)

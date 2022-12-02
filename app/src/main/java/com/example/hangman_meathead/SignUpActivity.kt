@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
-import com.example.hangman_meathead.databinding.ActivityLoginBinding
 import com.example.hangman_meathead.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
 
