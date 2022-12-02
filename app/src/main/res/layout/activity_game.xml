@@ -5,499 +5,499 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/asset_2" />
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView6"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:srcCompat="@drawable/asset_2" />-->
 
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="282dp"
-        android:layout_height="397dp"
-        android:layout_marginStart="-32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/hangman" />
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView10"-->
+<!--        android:layout_width="282dp"-->
+<!--        android:layout_height="397dp"-->
+<!--        android:layout_marginStart="-32dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:srcCompat="@drawable/hangman" />-->
 
-    <ImageButton
-        android:id="@+id/imageButton6"
-        android:layout_width="57dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerInside"
-        android:scaleX="1.5"
-        android:scaleY="1.5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/pause" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/imageButton6"-->
+<!--        android:layout_width="57dp"-->
+<!--        android:layout_height="51dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerInside"-->
+<!--        android:scaleX="1.5"-->
+<!--        android:scaleY="1.5"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:srcCompat="@drawable/pause" />-->
 
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="24dp"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView10"
-        app:srcCompat="@drawable/asset_4" />
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView11"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:scaleType="fitXY"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/imageView6"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/imageView10"-->
+<!--        app:srcCompat="@drawable/asset_4" />-->
 
-    <ImageButton
-        android:id="@+id/imageButton8"
-        android:layout_width="73dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="15dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerInside"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:srcCompat="@drawable/line" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/imageButton8"-->
+<!--        android:layout_width="73dp"-->
+<!--        android:layout_height="34dp"-->
+<!--        android:layout_marginStart="15dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerInside"-->
+<!--        android:visibility="visible"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/guideline3"-->
+<!--        app:srcCompat="@drawable/line" />-->
 
-    <ImageButton
-        android:id="@+id/imageButton9"
-        android:layout_width="73dp"
-        android:layout_height="34dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerInside"
-        android:visibility="visible"
-        app:layout_constraintStart_toEndOf="@+id/imageButton8"
-        app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:srcCompat="@drawable/line" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/imageButton9"-->
+<!--        android:layout_width="73dp"-->
+<!--        android:layout_height="34dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerInside"-->
+<!--        android:visibility="visible"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/imageButton8"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/guideline3"-->
+<!--        app:srcCompat="@drawable/line" />-->
 
-    <ImageButton
-        android:id="@+id/imageButton12"
-        android:layout_width="73dp"
-        android:layout_height="34dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerInside"
-        android:visibility="visible"
-        app:layout_constraintStart_toEndOf="@+id/imageButton11"
-        app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:srcCompat="@drawable/line" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/imageButton12"-->
+<!--        android:layout_width="73dp"-->
+<!--        android:layout_height="34dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerInside"-->
+<!--        android:visibility="visible"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/imageButton11"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/guideline3"-->
+<!--        app:srcCompat="@drawable/line" />-->
 
-    <ImageButton
-        android:id="@+id/imageButton11"
-        android:layout_width="73dp"
-        android:layout_height="34dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerInside"
-        android:visibility="visible"
-        app:layout_constraintStart_toEndOf="@+id/imageButton10"
-        app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:srcCompat="@drawable/line" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/imageButton11"-->
+<!--        android:layout_width="73dp"-->
+<!--        android:layout_height="34dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerInside"-->
+<!--        android:visibility="visible"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/imageButton10"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/guideline3"-->
+<!--        app:srcCompat="@drawable/line" />-->
 
-    <ImageButton
-        android:id="@+id/imageButton10"
-        android:layout_width="73dp"
-        android:layout_height="34dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerInside"
-        android:visibility="visible"
-        app:layout_constraintStart_toEndOf="@+id/imageButton9"
-        app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:srcCompat="@drawable/line" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/imageButton10"-->
+<!--        android:layout_width="73dp"-->
+<!--        android:layout_height="34dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerInside"-->
+<!--        android:visibility="visible"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/imageButton9"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/guideline3"-->
+<!--        app:srcCompat="@drawable/line" />-->
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="270dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintGuide_begin="460dp" />
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/guideline3"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="270dp"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintGuide_begin="460dp" />-->
 
-    <ImageButton
-        android:id="@+id/a"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerCrop"
-        android:scaleX="1.4"
-        android:scaleY="1.4"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton8"
-        app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/a"-->
+<!--        android:layout_width="52dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:scaleX="1.4"-->
+<!--        android:scaleY="1.4"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/guideline4"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/imageButton8"-->
+<!--        app:layout_wrapBehaviorInParent="horizontal_only"-->
+<!--        app:srcCompat="@drawable/a" />-->
 
-    <ImageButton
-        android:id="@+id/b"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerCrop"
-        android:scaleX="1.4"
-        android:scaleY="1.4"
-        app:layout_constraintStart_toEndOf="@+id/a"
-        app:layout_constraintTop_toTopOf="@+id/a"
-        app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/b" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/b"-->
+<!--        android:layout_width="52dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:scaleX="1.4"-->
+<!--        android:scaleY="1.4"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/a"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/a"-->
+<!--        app:layout_wrapBehaviorInParent="horizontal_only"-->
+<!--        app:srcCompat="@drawable/a"-->
+<!--        tools:srcCompat="@drawable/b" />-->
 
-    <ImageButton
-        android:id="@+id/c"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerCrop"
-        android:scaleX="1.4"
-        android:scaleY="1.4"
-        app:layout_constraintStart_toEndOf="@+id/b"
-        app:layout_constraintTop_toTopOf="@+id/a"
-        app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/c" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/c"-->
+<!--        android:layout_width="52dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:scaleX="1.4"-->
+<!--        android:scaleY="1.4"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/b"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/a"-->
+<!--        app:layout_wrapBehaviorInParent="horizontal_only"-->
+<!--        app:srcCompat="@drawable/a"-->
+<!--        tools:srcCompat="@drawable/c" />-->
 
-    <ImageButton
-        android:id="@+id/d"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerCrop"
-        android:scaleX="1.4"
-        android:scaleY="1.4"
-        app:layout_constraintStart_toEndOf="@+id/c"
-        app:layout_constraintTop_toTopOf="@+id/a"
-        app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/d" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/d"-->
+<!--        android:layout_width="52dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:scaleX="1.4"-->
+<!--        android:scaleY="1.4"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/c"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/a"-->
+<!--        app:layout_wrapBehaviorInParent="horizontal_only"-->
+<!--        app:srcCompat="@drawable/a"-->
+<!--        tools:srcCompat="@drawable/d" />-->
 
-    <ImageButton
-        android:id="@+id/e"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerCrop"
-        android:scaleX="1.4"
-        android:scaleY="1.4"
-        app:layout_constraintStart_toEndOf="@+id/d"
-        app:layout_constraintTop_toTopOf="@+id/a"
-        app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/e" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/e"-->
+<!--        android:layout_width="52dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:scaleX="1.4"-->
+<!--        android:scaleY="1.4"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/d"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/a"-->
+<!--        app:layout_wrapBehaviorInParent="horizontal_only"-->
+<!--        app:srcCompat="@drawable/a"-->
+<!--        tools:srcCompat="@drawable/e" />-->
 
-    <ImageButton
-        android:id="@+id/f"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerCrop"
-        android:scaleX="1.4"
-        android:scaleY="1.4"
-        app:layout_constraintStart_toEndOf="@+id/e"
-        app:layout_constraintTop_toTopOf="@+id/a"
-        app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/f" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/f"-->
+<!--        android:layout_width="52dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:scaleX="1.4"-->
+<!--        android:scaleY="1.4"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/e"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/a"-->
+<!--        app:layout_wrapBehaviorInParent="horizontal_only"-->
+<!--        app:srcCompat="@drawable/a"-->
+<!--        tools:srcCompat="@drawable/f" />-->
 
-    <ImageButton
-        android:id="@+id/g"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerCrop"
-        android:scaleX="1.4"
-        android:scaleY="1.4"
-        app:layout_constraintStart_toEndOf="@+id/f"
-        app:layout_constraintTop_toTopOf="@+id/a"
-        app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/g" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/g"-->
+<!--        android:layout_width="52dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:scaleX="1.4"-->
+<!--        android:scaleY="1.4"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/f"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/a"-->
+<!--        app:layout_wrapBehaviorInParent="horizontal_only"-->
+<!--        app:srcCompat="@drawable/a"-->
+<!--        tools:srcCompat="@drawable/g" />-->
 
-    <ImageButton
-        android:id="@+id/h"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerCrop"
-        android:scaleX="1.4"
-        android:scaleY="1.4"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/a"
-        app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/h" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/h"-->
+<!--        android:layout_width="52dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:scaleX="1.4"-->
+<!--        android:scaleY="1.4"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/guideline4"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/a"-->
+<!--        app:layout_wrapBehaviorInParent="horizontal_only"-->
+<!--        app:srcCompat="@drawable/a"-->
+<!--        tools:srcCompat="@drawable/h" />-->
 
-    <ImageButton
-        android:id="@+id/i"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerCrop"
-        android:scaleX="1.4"
-        android:scaleY="1.4"
-        app:layout_constraintStart_toEndOf="@+id/h"
-        app:layout_constraintTop_toBottomOf="@+id/b"
-        app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/i" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/i"-->
+<!--        android:layout_width="52dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:scaleX="1.4"-->
+<!--        android:scaleY="1.4"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/h"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/b"-->
+<!--        app:layout_wrapBehaviorInParent="horizontal_only"-->
+<!--        app:srcCompat="@drawable/a"-->
+<!--        tools:srcCompat="@drawable/i" />-->
 
-    <ImageButton
-        android:id="@+id/j"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerCrop"
-        android:scaleX="1.4"
-        android:scaleY="1.4"
-        app:layout_constraintStart_toEndOf="@+id/i"
-        app:layout_constraintTop_toBottomOf="@+id/b"
-        app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/j" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/j"-->
+<!--        android:layout_width="52dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:scaleX="1.4"-->
+<!--        android:scaleY="1.4"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/i"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/b"-->
+<!--        app:layout_wrapBehaviorInParent="horizontal_only"-->
+<!--        app:srcCompat="@drawable/a"-->
+<!--        tools:srcCompat="@drawable/j" />-->
 
-    <ImageButton
-        android:id="@+id/k"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerCrop"
-        android:scaleX="1.4"
-        android:scaleY="1.4"
-        app:layout_constraintStart_toEndOf="@+id/j"
-        app:layout_constraintTop_toBottomOf="@+id/b"
-        app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/k" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/k"-->
+<!--        android:layout_width="52dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:scaleX="1.4"-->
+<!--        android:scaleY="1.4"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/j"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/b"-->
+<!--        app:layout_wrapBehaviorInParent="horizontal_only"-->
+<!--        app:srcCompat="@drawable/a"-->
+<!--        tools:srcCompat="@drawable/k" />-->
 
-    <ImageButton
-        android:id="@+id/l"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerCrop"
-        android:scaleX="1.4"
-        android:scaleY="1.4"
-        app:layout_constraintStart_toEndOf="@+id/k"
-        app:layout_constraintTop_toBottomOf="@+id/b"
-        app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/l" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/l"-->
+<!--        android:layout_width="52dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:scaleX="1.4"-->
+<!--        android:scaleY="1.4"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/k"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/b"-->
+<!--        app:layout_wrapBehaviorInParent="horizontal_only"-->
+<!--        app:srcCompat="@drawable/a"-->
+<!--        tools:srcCompat="@drawable/l" />-->
 
-    <ImageButton
-        android:id="@+id/m"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerCrop"
-        android:scaleX="1.4"
-        android:scaleY="1.4"
-        app:layout_constraintStart_toEndOf="@+id/l"
-        app:layout_constraintTop_toBottomOf="@+id/b"
-        app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/m" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/m"-->
+<!--        android:layout_width="52dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:scaleX="1.4"-->
+<!--        android:scaleY="1.4"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/l"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/b"-->
+<!--        app:layout_wrapBehaviorInParent="horizontal_only"-->
+<!--        app:srcCompat="@drawable/a"-->
+<!--        tools:srcCompat="@drawable/m" />-->
 
-    <ImageButton
-        android:id="@+id/n"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerCrop"
-        android:scaleX="1.4"
-        android:scaleY="1.4"
-        app:layout_constraintStart_toEndOf="@+id/m"
-        app:layout_constraintTop_toBottomOf="@+id/b"
-        app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/n" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/n"-->
+<!--        android:layout_width="52dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:scaleX="1.4"-->
+<!--        android:scaleY="1.4"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/m"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/b"-->
+<!--        app:layout_wrapBehaviorInParent="horizontal_only"-->
+<!--        app:srcCompat="@drawable/a"-->
+<!--        tools:srcCompat="@drawable/n" />-->
 
-    <ImageButton
-        android:id="@+id/ñ"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerCrop"
-        android:scaleX="1.4"
-        android:scaleY="1.4"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/h"
-        app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/spanish_n" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/ñ"-->
+<!--        android:layout_width="52dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:scaleX="1.4"-->
+<!--        android:scaleY="1.4"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/guideline4"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/h"-->
+<!--        app:layout_wrapBehaviorInParent="horizontal_only"-->
+<!--        app:srcCompat="@drawable/a"-->
+<!--        tools:srcCompat="@drawable/spanish_n" />-->
 
-    <ImageButton
-        android:id="@+id/o"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerCrop"
-        android:scaleX="1.4"
-        android:scaleY="1.4"
-        app:layout_constraintStart_toEndOf="@+id/ñ"
-        app:layout_constraintTop_toBottomOf="@+id/h"
-        app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/o" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/o"-->
+<!--        android:layout_width="52dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:scaleX="1.4"-->
+<!--        android:scaleY="1.4"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/ñ"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/h"-->
+<!--        app:layout_wrapBehaviorInParent="horizontal_only"-->
+<!--        app:srcCompat="@drawable/a"-->
+<!--        tools:srcCompat="@drawable/o" />-->
 
-    <ImageButton
-        android:id="@+id/p"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerCrop"
-        android:scaleX="1.4"
-        android:scaleY="1.4"
-        app:layout_constraintStart_toEndOf="@+id/o"
-        app:layout_constraintTop_toBottomOf="@+id/h"
-        app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/p" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/p"-->
+<!--        android:layout_width="52dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:scaleX="1.4"-->
+<!--        android:scaleY="1.4"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/o"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/h"-->
+<!--        app:layout_wrapBehaviorInParent="horizontal_only"-->
+<!--        app:srcCompat="@drawable/a"-->
+<!--        tools:srcCompat="@drawable/p" />-->
 
-    <ImageButton
-        android:id="@+id/q"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerCrop"
-        android:scaleX="1.4"
-        android:scaleY="1.4"
-        app:layout_constraintStart_toEndOf="@+id/p"
-        app:layout_constraintTop_toBottomOf="@+id/h"
-        app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/q" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/q"-->
+<!--        android:layout_width="52dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:scaleX="1.4"-->
+<!--        android:scaleY="1.4"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/p"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/h"-->
+<!--        app:layout_wrapBehaviorInParent="horizontal_only"-->
+<!--        app:srcCompat="@drawable/a"-->
+<!--        tools:srcCompat="@drawable/q" />-->
 
-    <ImageButton
-        android:id="@+id/r"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerCrop"
-        android:scaleX="1.4"
-        android:scaleY="1.4"
-        app:layout_constraintStart_toEndOf="@+id/q"
-        app:layout_constraintTop_toBottomOf="@+id/h"
-        app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/r" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/r"-->
+<!--        android:layout_width="52dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:scaleX="1.4"-->
+<!--        android:scaleY="1.4"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/q"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/h"-->
+<!--        app:layout_wrapBehaviorInParent="horizontal_only"-->
+<!--        app:srcCompat="@drawable/a"-->
+<!--        tools:srcCompat="@drawable/r" />-->
 
-    <ImageButton
-        android:id="@+id/s"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerCrop"
-        android:scaleX="1.4"
-        android:scaleY="1.4"
-        app:layout_constraintStart_toEndOf="@+id/r"
-        app:layout_constraintTop_toBottomOf="@+id/h"
-        app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/s" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/s"-->
+<!--        android:layout_width="52dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:scaleX="1.4"-->
+<!--        android:scaleY="1.4"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/r"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/h"-->
+<!--        app:layout_wrapBehaviorInParent="horizontal_only"-->
+<!--        app:srcCompat="@drawable/a"-->
+<!--        tools:srcCompat="@drawable/s" />-->
 
-    <ImageButton
-        android:id="@+id/t"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerCrop"
-        android:scaleX="1.4"
-        android:scaleY="1.4"
-        app:layout_constraintStart_toEndOf="@+id/s"
-        app:layout_constraintTop_toBottomOf="@+id/h"
-        app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/t" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/t"-->
+<!--        android:layout_width="52dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:scaleX="1.4"-->
+<!--        android:scaleY="1.4"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/s"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/h"-->
+<!--        app:layout_wrapBehaviorInParent="horizontal_only"-->
+<!--        app:srcCompat="@drawable/a"-->
+<!--        tools:srcCompat="@drawable/t" />-->
 
-    <ImageButton
-        android:id="@+id/u"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerCrop"
-        android:scaleX="1.4"
-        android:scaleY="1.4"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/o"
-        app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/u" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/u"-->
+<!--        android:layout_width="52dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:scaleX="1.4"-->
+<!--        android:scaleY="1.4"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/guideline4"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/o"-->
+<!--        app:layout_wrapBehaviorInParent="horizontal_only"-->
+<!--        app:srcCompat="@drawable/a"-->
+<!--        tools:srcCompat="@drawable/u" />-->
 
-    <ImageButton
-        android:id="@+id/v"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerCrop"
-        android:scaleX="1.4"
-        android:scaleY="1.4"
-        app:layout_constraintStart_toEndOf="@+id/u"
-        app:layout_constraintTop_toBottomOf="@+id/o"
-        app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/v" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/v"-->
+<!--        android:layout_width="52dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:scaleX="1.4"-->
+<!--        android:scaleY="1.4"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/u"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/o"-->
+<!--        app:layout_wrapBehaviorInParent="horizontal_only"-->
+<!--        app:srcCompat="@drawable/a"-->
+<!--        tools:srcCompat="@drawable/v" />-->
 
-    <ImageButton
-        android:id="@+id/w"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerCrop"
-        android:scaleX="1.4"
-        android:scaleY="1.4"
-        app:layout_constraintStart_toEndOf="@+id/v"
-        app:layout_constraintTop_toBottomOf="@+id/o"
-        app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/w" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/w"-->
+<!--        android:layout_width="52dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:scaleX="1.4"-->
+<!--        android:scaleY="1.4"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/v"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/o"-->
+<!--        app:layout_wrapBehaviorInParent="horizontal_only"-->
+<!--        app:srcCompat="@drawable/a"-->
+<!--        tools:srcCompat="@drawable/w" />-->
 
-    <ImageButton
-        android:id="@+id/x"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerCrop"
-        android:scaleX="1.4"
-        android:scaleY="1.4"
-        app:layout_constraintStart_toEndOf="@+id/w"
-        app:layout_constraintTop_toBottomOf="@+id/o"
-        app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/x" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/x"-->
+<!--        android:layout_width="52dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:scaleX="1.4"-->
+<!--        android:scaleY="1.4"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/w"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/o"-->
+<!--        app:layout_wrapBehaviorInParent="horizontal_only"-->
+<!--        app:srcCompat="@drawable/a"-->
+<!--        tools:srcCompat="@drawable/x" />-->
 
-    <ImageButton
-        android:id="@+id/y"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerCrop"
-        android:scaleX="1.4"
-        android:scaleY="1.4"
-        app:layout_constraintStart_toEndOf="@+id/x"
-        app:layout_constraintTop_toBottomOf="@+id/o"
-        app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/y" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/y"-->
+<!--        android:layout_width="52dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:scaleX="1.4"-->
+<!--        android:scaleY="1.4"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/x"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/o"-->
+<!--        app:layout_wrapBehaviorInParent="horizontal_only"-->
+<!--        app:srcCompat="@drawable/a"-->
+<!--        tools:srcCompat="@drawable/y" />-->
 
-    <ImageButton
-        android:id="@+id/z"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerCrop"
-        android:scaleX="1.4"
-        android:scaleY="1.4"
-        app:layout_constraintStart_toEndOf="@+id/y"
-        app:layout_constraintTop_toBottomOf="@+id/o"
-        app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/z" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/z"-->
+<!--        android:layout_width="52dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:scaleX="1.4"-->
+<!--        android:scaleY="1.4"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/y"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/o"-->
+<!--        app:layout_wrapBehaviorInParent="horizontal_only"-->
+<!--        app:srcCompat="@drawable/a"-->
+<!--        tools:srcCompat="@drawable/z" />-->
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="16dp" />
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/guideline4"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintGuide_begin="16dp" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

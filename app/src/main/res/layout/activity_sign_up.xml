@@ -43,7 +43,7 @@
         app:srcCompat="@drawable/country" />
 
     <ImageButton
-        android:id="@+id/signUpSingUpButton"
+        android:id="@+id/signUpSignUpButton"
         android:layout_width="258dp"
         android:layout_height="77dp"
         android:backgroundTint="#00FFFFFF"
@@ -55,7 +55,7 @@
         app:srcCompat="@drawable/signup_button" />
 
     <ImageButton
-        android:id="@+id/signUplogInButton"
+        android:id="@+id/signUpLogInButton"
         android:layout_width="331dp"
         android:layout_height="34dp"
         android:layout_marginTop="16dp"
@@ -63,7 +63,7 @@
         android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="@+id/signUpBackgroundImageView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signUpSingUpButton"
+        app:layout_constraintTop_toBottomOf="@+id/signUpSignUpButton"
         app:srcCompat="@drawable/text_account" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -71,21 +71,19 @@
         android:layout_width="200dp"
         android:layout_height="52dp"
         android:layout_marginTop="64dp"
-        android:background="#00FFFFFF"
-        android:foreground="@drawable/login_input"
+        android:background="@drawable/login_input"
         android:hint="Name"
         app:boxBackgroundMode="none"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signUpImageView"
-        app:startIconDrawable="@android:drawable/ic_dialog_info">
+        app:layout_constraintTop_toBottomOf="@+id/signUpImageView">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/input_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:singleLine="false"
-            android:translationX="6dp"
+            android:translationX="40dp"
             android:translationY="-12dp" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -95,21 +93,19 @@
         android:layout_width="200dp"
         android:layout_height="52dp"
         android:layout_marginTop="16dp"
-        android:background="#00FFFFFF"
-        android:foreground="@drawable/email"
+        android:background="@drawable/email"
         android:hint="Email"
         app:boxBackgroundMode="none"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputNameWraper"
-        app:startIconDrawable="@android:drawable/ic_dialog_info">
+        app:layout_constraintTop_toBottomOf="@+id/inputNameWraper">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/input_signUpMail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:singleLine="false"
-            android:translationX="6dp"
+            android:translationX="40dp"
             android:translationY="-12dp" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -119,20 +115,19 @@
         android:layout_width="200dp"
         android:layout_height="52dp"
         android:layout_marginTop="16dp"
-        android:foreground="@drawable/password_input"
+        android:background="@drawable/email"
         android:hint="Password"
         app:boxBackgroundMode="none"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputSignUpMailWraper"
-        app:startIconDrawable="@android:drawable/ic_dialog_info">
+        app:layout_constraintTop_toBottomOf="@+id/inputSignUpMailWraper">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/input_signUpPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:password="true"
-            android:translationX="6dp"
+            android:translationX="40dp"
             android:translationY="-12dp" />
     </com.google.android.material.textfield.TextInputLayout>
 

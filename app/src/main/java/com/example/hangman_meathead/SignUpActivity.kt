@@ -20,11 +20,11 @@ class SignUpActivity : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
 
-        binding.singUpButton.setOnClickListener {
+        binding.signUpSignUpButton.setOnClickListener {
 
-            val username = binding.inputUsername.text.toString()
-            val mail = binding.inputMail.text.toString()
-            val password = binding.inputPassword.text.toString()
+            val username = binding.inputName.text.toString()
+            val mail = binding.inputSignUpMail.text.toString()
+            val password = binding.inputSignUpPassword.text.toString()
 
             firebaseAuth.createUserWithEmailAndPassword(mail, password)
                 .addOnSuccessListener {
@@ -38,19 +38,19 @@ class SignUpActivity : AppCompatActivity() {
                 }
         }
 
-        binding.inputMail.setOnFocusChangeListener { view, hasFocus ->
+        binding.inputSignUpMail.setOnFocusChangeListener { view, hasFocus ->
 
             if (!hasFocus) {
-                val mail = binding.inputMail.text.toString()
+                val mail = binding.inputSignUpMail.text.toString()
                 if (!Patterns.EMAIL_ADDRESS.matcher(mail).matches()) {
-                    binding.inputMail.error = "Formato de email incorrecto!"
+                    binding.inputSignUpMail.error = "Formato de email incorrecto!"
                 } else {
-                    binding.inputMail.error = null
+                    binding.inputSignUpMail.error = null
                 }
             }
         }
 
-        binding.logInButton.setOnClickListener{
+        binding.signUpLogInButton.setOnClickListener{
             val intentMain = Intent(this@SignUpActivity, LoginActivity::class.java)
             startActivity(intentMain)
 
