@@ -1,5 +1,6 @@
 package com.example.hangman_meathead
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -20,11 +21,13 @@ class MainActivity : AppCompatActivity() {
 //            Toast.makeText(this, "Hola, soy un Toast", Toast.LENGTH_LONG).show()
 //        }
 
-        binding.floatingButton.setOnClickListener{
-            Snackbar.make(binding.root, "Hola, soy un Snackbar", Snackbar.LENGTH_LONG)
+        binding.tapimage.setOnClickListener{
+            /*Snackbar.make(binding.root, "Hola, soy un Snackbar", Snackbar.LENGTH_LONG)
                 .setAction("Undo"){
                     //Code to undo}.show()
-                }.show()
+                }.show()*/
+            val intentLogin = Intent(this@MainActivity, LoginActivity::class.java)
+            startActivity(intentLogin)
         }
     }
 
