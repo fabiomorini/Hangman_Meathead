@@ -21,12 +21,12 @@ class MainActivity : AppCompatActivity() {
 //            Toast.makeText(this, "Hola, soy un Toast", Toast.LENGTH_LONG).show()
 //        }
 
-        binding.taptostartImageView.setOnClickListener{
+        binding.tapimage.setOnClickListener{
             /*Snackbar.make(binding.root, "Hola, soy un Snackbar", Snackbar.LENGTH_LONG)
                 .setAction("Undo"){
                     //Code to undo}.show()
                 }.show()*/
-            val intentLogin = Intent(this@MainActivity, SignUpActivity::class.java)
+            val intentLogin = Intent(this@MainActivity, LoginActivity::class.java)
             startActivity(intentLogin)
         }
     }
