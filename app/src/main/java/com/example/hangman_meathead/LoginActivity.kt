@@ -26,7 +26,7 @@ class LoginActivity : AppCompatActivity() {
 
             firebaseAuth.signInWithEmailAndPassword(mail, password)
             .addOnSuccessListener {
-                val intentMain = Intent(this@LoginActivity, GameActivity::class.java)
+                val intentMain = Intent(this@LoginActivity, MainMenuActivity::class.java)
                 startActivity(intentMain)
 
                 finish()
