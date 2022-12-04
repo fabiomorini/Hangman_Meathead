@@ -22,6 +22,7 @@ class GameActivity : AppCompatActivity() {
         //region Shared Preferences
         val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this)
         val editor = sharedPrefs.edit()
+        binding.audioSwitch.setChecked(sharedPrefs.getBoolean("audioIsActive", true))
         val username = sharedPrefs.getString("username", null)
         val email = sharedPrefs.getString("email", null)
         val password = sharedPrefs.getString("password", null)
@@ -70,6 +71,7 @@ class GameActivity : AppCompatActivity() {
             } else {
                 editor.putBoolean("audioIsActive", false)
             }
+            editor.apply()
         }
 
         binding.exitSettingsButton.setOnClickListener{

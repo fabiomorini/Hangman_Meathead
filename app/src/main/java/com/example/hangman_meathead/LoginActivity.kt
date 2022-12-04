@@ -3,6 +3,7 @@ package com.example.hangman_meathead
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.util.Patterns
 import android.widget.Toast
 import com.example.hangman_meathead.databinding.ActivityLoginBinding
@@ -18,16 +19,38 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this)
+        val editor = sharedPrefs.edit()
+        val loadedEmail = sharedPrefs.getString("email", null)
+        val loadedPassword = sharedPrefs.getString("password", null)
+
         firebaseAuth = FirebaseAuth.getInstance()
 
-        binding.loginButton.setOnClickListener {
-            val mail = binding.inputMail.text.toString()
-            val password = binding.inputPassword.text.toString()
-
-            firebaseAuth.signInWithEmailAndPassword(mail, password)
+        if(loadedEmail != null && loadedPassword != null){
+            firebaseAuth.signInWithEmailAndPassword(loadedEmail, loadedPassword)
             .addOnSuccessListener {
                 val intentMain = Intent(this@LoginActivity, MainMenuActivity::class.java)
                 startActivity(intentMain)
+
+                finish()
+
+            }.addOnFailureListener {
+                Toast.makeText(this, "Login incorrecto!", Toast.LENGTH_LONG).show()
+            }
+        }
+
+        binding.loginButton.setOnClickListener {
+            val email = binding.inputMail.text.toString()
+            val password = binding.inputPassword.text.toString()
+
+            firebaseAuth.signInWithEmailAndPassword(email, password)
+            .addOnSuccessListener {
+                val intentMain = Intent(this@LoginActivity, MainMenuActivity::class.java)
+                startActivity(intentMain)
+
+                editor.putString("email", binding.inputMail.text.toString())
+                editor.putString("password", binding.inputPassword.text.toString())
+                editor.apply()
 
                 finish()
 

@@ -3,6 +3,7 @@ package com.example.hangman_meathead
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.view.View
 import android.widget.Toast
 import com.example.hangman_meathead.databinding.ActivityMainMenuBinding
@@ -17,6 +18,14 @@ class MainMenuActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
+        //region Shared Preferences
+        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this)
+        val editor = sharedPrefs.edit()
+        binding.audioSwitch.setChecked(sharedPrefs.getBoolean("audioIsActive", true))
+        val username = sharedPrefs.getString("username", null)
+        val email = sharedPrefs.getString("email", null)
+        val password = sharedPrefs.getString("password", null)
+        //endregion Shared Preferences
 
         binding.playButton.setOnClickListener{
             val intentMain = Intent(this@MainMenuActivity, GameActivity::class.java)
@@ -39,10 +48,11 @@ class MainMenuActivity : AppCompatActivity() {
 
         binding.audioSwitch.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                //TODO
+                editor.putBoolean("audioIsActive", true)
             } else {
-                //TODO
+                editor.putBoolean("audioIsActive", false)
             }
+            editor.apply()
         }
 
         binding.exitSettingsButton.setOnClickListener{
