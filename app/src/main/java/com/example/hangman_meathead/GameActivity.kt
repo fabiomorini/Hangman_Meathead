@@ -67,10 +67,8 @@ class GameActivity : AppCompatActivity() {
         binding.audioSwitch.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 editor.putBoolean("audioIsActive", true)
-//                binding.audioButton.setImageResource(R.drawable.audioon)
             } else {
                 editor.putBoolean("audioIsActive", false)
-//                binding.audioButton.setImageResource(R.drawable.audiooff)
             }
         }
 

@@ -3,6 +3,7 @@ package com.example.hangman_meathead
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import com.example.hangman_meathead.databinding.ActivityMainMenuBinding
 import com.example.hangman_meathead.databinding.ActivitySplashScreenBinding
@@ -28,8 +29,25 @@ class MainMenuActivity : AppCompatActivity() {
         }
 
         binding.settingsButton.setOnClickListener{
-            val intentMain = Intent(this@MainMenuActivity, GameActivity::class.java)
-            startActivity(intentMain)
+            binding.settingsMenu.visibility = View.VISIBLE
         }
+
+        //region Settings
+        binding.closeSettingsButton.setOnClickListener{
+            binding.settingsMenu.visibility = View.INVISIBLE
+        }
+
+        binding.audioSwitch.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                //TODO
+            } else {
+                //TODO
+            }
+        }
+
+        binding.exitSettingsButton.setOnClickListener{
+            binding.settingsMenu.visibility = View.INVISIBLE
+        }
+        //endregion Settings
     }
 }
