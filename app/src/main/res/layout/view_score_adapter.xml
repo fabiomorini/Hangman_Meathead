@@ -2,36 +2,70 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="409dp"
         android:layout_height="729dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteX="2dp"
         tools:layout_editor_absoluteY="1dp">
 
-        <ImageView
-            android:id="@+id/backgroundElement"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="90dp"
-            android:scaleType="centerInside"
-            app:srcCompat="@drawable/recycler_view_leaderboard" />
+            android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/profilePicture"
-            android:layout_width="77dp"
-            android:layout_height="77dp"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/ic_launcher_foreground" />
+            <ImageView
+                android:id="@+id/backgroundElement"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/recycler_view_leaderboard"
+                tools:layout_editor_absoluteX="-16dp"
+                tools:layout_editor_absoluteY="0dp" />
 
-        <TextView
-            android:id="@+id/scoreName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            <ImageView
+                android:id="@+id/profilePicture"
+                android:layout_width="72dp"
+                android:layout_height="69dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="-3dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="@+id/backgroundElement"
+                app:layout_constraintStart_toStartOf="@+id/guideline5"
+                app:layout_constraintTop_toTopOf="@+id/backgroundElement"
+                app:srcCompat="@drawable/ic_launcher_foreground" />
+
+            <TextView
+                android:id="@+id/scoreName"
+                android:layout_width="225dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:layout_constraintStart_toEndOf="@+id/profilePicture"
+                app:layout_constraintTop_toTopOf="@+id/profilePicture" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="9dp" />
+
+            <TextView
+                android:id="@+id/scorePoints"
+                android:layout_width="225dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="22dp"
+                app:layout_constraintStart_toEndOf="@+id/profilePicture"
+                app:layout_constraintTop_toBottomOf="@+id/scoreName" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

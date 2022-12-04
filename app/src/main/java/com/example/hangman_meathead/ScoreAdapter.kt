@@ -11,6 +11,7 @@ class ScoreAdapter (private val scores : List<Score>) : RecyclerView.Adapter<Sco
     inner class ViewHolder(private val binding : ViewScoreAdapterBinding) : RecyclerView.ViewHolder(binding.root){
         fun bind(score : Score) {
             binding.scoreName.text = score.name
+            binding.scorePoints.text = score.points
         }
     }
 
