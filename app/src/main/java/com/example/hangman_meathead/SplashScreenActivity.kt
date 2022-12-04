@@ -2,6 +2,7 @@ package com.example.hangman_meathead
 
 import android.content.Intent
 import android.os.Bundle
+import android.preference.PreferenceManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import com.example.hangman_meathead.databinding.ActivitySplashScreenBinding
@@ -17,7 +18,13 @@ class SplashScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
 
-        setContentView(R.layout.activity_splash_screen)
+        setContentView(binding.root)
+
+        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this)
+        val audioIsActive = sharedPrefs.getBoolean("audioIsActive", true)
+        val username = sharedPrefs.getString("username", null)
+        val email = sharedPrefs.getString("email", null)
+        val password = sharedPrefs.getString("password", null)
 
         CoroutineScope(Dispatchers.Default).launch {
             delay(3000)
