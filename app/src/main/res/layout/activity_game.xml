@@ -86,7 +86,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/hangmanText"
         app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a" />
+        app:srcCompat="@drawable/a_button" />
 
     <ImageButton
         android:id="@+id/bButton"
@@ -99,8 +99,8 @@
         app:layout_constraintStart_toEndOf="@+id/aButton"
         app:layout_constraintTop_toTopOf="@+id/aButton"
         app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/b" />
+        app:srcCompat="@drawable/b_button"
+        tools:srcCompat="@drawable/b_button" />
 
     <ImageButton
         android:id="@+id/cButton"
@@ -113,8 +113,8 @@
         app:layout_constraintStart_toEndOf="@+id/bButton"
         app:layout_constraintTop_toTopOf="@+id/aButton"
         app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/c" />
+        app:srcCompat="@drawable/c_button"
+        tools:srcCompat="@drawable/c_button" />
 
     <ImageButton
         android:id="@+id/dButton"
@@ -127,8 +127,8 @@
         app:layout_constraintStart_toEndOf="@+id/cButton"
         app:layout_constraintTop_toTopOf="@+id/aButton"
         app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/d" />
+        app:srcCompat="@drawable/d_button"
+        tools:srcCompat="@drawable/d_button" />
 
     <ImageButton
         android:id="@+id/eButton"
@@ -141,8 +141,8 @@
         app:layout_constraintStart_toEndOf="@+id/dButton"
         app:layout_constraintTop_toTopOf="@+id/aButton"
         app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/e" />
+        app:srcCompat="@drawable/e_button"
+        tools:srcCompat="@drawable/e_button" />
 
     <ImageButton
         android:id="@+id/fButton"
@@ -155,8 +155,8 @@
         app:layout_constraintStart_toEndOf="@+id/eButton"
         app:layout_constraintTop_toTopOf="@+id/aButton"
         app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/f" />
+        app:srcCompat="@drawable/f_button"
+        tools:srcCompat="@drawable/f_button" />
 
     <ImageButton
         android:id="@+id/gButton"
@@ -169,8 +169,8 @@
         app:layout_constraintStart_toEndOf="@+id/fButton"
         app:layout_constraintTop_toTopOf="@+id/aButton"
         app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/g" />
+        app:srcCompat="@drawable/g_button"
+        tools:srcCompat="@drawable/g_button" />
 
     <ImageButton
         android:id="@+id/hButton"
@@ -183,8 +183,8 @@
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/aButton"
         app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/h" />
+        app:srcCompat="@drawable/h_button"
+        tools:srcCompat="@drawable/h_button" />
 
     <ImageButton
         android:id="@+id/iButton"
@@ -197,8 +197,8 @@
         app:layout_constraintStart_toEndOf="@+id/hButton"
         app:layout_constraintTop_toBottomOf="@+id/bButton"
         app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/i" />
+        app:srcCompat="@drawable/i_button"
+        tools:srcCompat="@drawable/i_button" />
 
     <ImageButton
         android:id="@+id/jButton"
@@ -211,8 +211,8 @@
         app:layout_constraintStart_toEndOf="@+id/iButton"
         app:layout_constraintTop_toBottomOf="@+id/bButton"
         app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/j" />
+        app:srcCompat="@drawable/j_button"
+        tools:srcCompat="@drawable/j_button" />
 
     <ImageButton
         android:id="@+id/kButton"
@@ -225,8 +225,8 @@
         app:layout_constraintStart_toEndOf="@+id/jButton"
         app:layout_constraintTop_toBottomOf="@+id/bButton"
         app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/k" />
+        app:srcCompat="@drawable/k_button"
+        tools:srcCompat="@drawable/k_button" />
 
     <ImageButton
         android:id="@+id/lButton"
@@ -239,8 +239,8 @@
         app:layout_constraintStart_toEndOf="@+id/kButton"
         app:layout_constraintTop_toBottomOf="@+id/bButton"
         app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/l" />
+        app:srcCompat="@drawable/l_button"
+        tools:srcCompat="@drawable/l_button" />
 
     <ImageButton
         android:id="@+id/mButton"
@@ -253,8 +253,8 @@
         app:layout_constraintStart_toEndOf="@+id/lButton"
         app:layout_constraintTop_toBottomOf="@+id/bButton"
         app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/m" />
+        app:srcCompat="@drawable/m_button"
+        tools:srcCompat="@drawable/m_button" />
 
     <ImageButton
         android:id="@+id/nButton"
@@ -267,8 +267,8 @@
         app:layout_constraintStart_toEndOf="@+id/mButton"
         app:layout_constraintTop_toBottomOf="@+id/bButton"
         app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/n" />
+        app:srcCompat="@drawable/n_button"
+        tools:srcCompat="@drawable/n_button" />
 
     <ImageButton
         android:id="@+id/ñButton"
@@ -281,7 +281,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/hButton"
         app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
+        app:srcCompat="@drawable/spanish_n"
         tools:srcCompat="@drawable/spanish_n" />
 
     <ImageButton
@@ -295,8 +295,8 @@
         app:layout_constraintStart_toEndOf="@+id/ñButton"
         app:layout_constraintTop_toBottomOf="@+id/hButton"
         app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/o" />
+        app:srcCompat="@drawable/o_button"
+        tools:srcCompat="@drawable/o_button" />
 
     <ImageButton
         android:id="@+id/pButton"
@@ -309,8 +309,8 @@
         app:layout_constraintStart_toEndOf="@+id/oButton"
         app:layout_constraintTop_toBottomOf="@+id/hButton"
         app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/p" />
+        app:srcCompat="@drawable/p_button"
+        tools:srcCompat="@drawable/p_button" />
 
     <ImageButton
         android:id="@+id/qButton"
@@ -323,8 +323,8 @@
         app:layout_constraintStart_toEndOf="@+id/pButton"
         app:layout_constraintTop_toBottomOf="@+id/hButton"
         app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/q" />
+        app:srcCompat="@drawable/q_button"
+        tools:srcCompat="@drawable/q_button" />
 
     <ImageButton
         android:id="@+id/rButton"
@@ -337,8 +337,8 @@
         app:layout_constraintStart_toEndOf="@+id/qButton"
         app:layout_constraintTop_toBottomOf="@+id/hButton"
         app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/r" />
+        app:srcCompat="@drawable/r_button"
+        tools:srcCompat="@drawable/r_button" />
 
     <ImageButton
         android:id="@+id/sButton"
@@ -351,8 +351,8 @@
         app:layout_constraintStart_toEndOf="@+id/rButton"
         app:layout_constraintTop_toBottomOf="@+id/hButton"
         app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/s" />
+        app:srcCompat="@drawable/s_button"
+        tools:srcCompat="@drawable/s_button" />
 
     <ImageButton
         android:id="@+id/tButton"
@@ -365,8 +365,8 @@
         app:layout_constraintStart_toEndOf="@+id/sButton"
         app:layout_constraintTop_toBottomOf="@+id/hButton"
         app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/t" />
+        app:srcCompat="@drawable/t_button"
+        tools:srcCompat="@drawable/t_button" />
 
     <ImageButton
         android:id="@+id/uButton"
@@ -379,8 +379,8 @@
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/oButton"
         app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/u" />
+        app:srcCompat="@drawable/u_button"
+        tools:srcCompat="@drawable/u_button" />
 
     <ImageButton
         android:id="@+id/vButton"
@@ -393,8 +393,8 @@
         app:layout_constraintStart_toEndOf="@+id/uButton"
         app:layout_constraintTop_toBottomOf="@+id/oButton"
         app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/v" />
+        app:srcCompat="@drawable/v_button"
+        tools:srcCompat="@drawable/v_button" />
 
     <ImageButton
         android:id="@+id/wButton"
@@ -407,8 +407,8 @@
         app:layout_constraintStart_toEndOf="@+id/vButton"
         app:layout_constraintTop_toBottomOf="@+id/oButton"
         app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/w" />
+        app:srcCompat="@drawable/w_button"
+        tools:srcCompat="@drawable/w_button" />
 
     <ImageButton
         android:id="@+id/xButton"
@@ -421,8 +421,8 @@
         app:layout_constraintStart_toEndOf="@+id/wButton"
         app:layout_constraintTop_toBottomOf="@+id/oButton"
         app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/x" />
+        app:srcCompat="@drawable/x_button"
+        tools:srcCompat="@drawable/x_button" />
 
     <ImageButton
         android:id="@+id/yButton"
@@ -435,8 +435,8 @@
         app:layout_constraintStart_toEndOf="@+id/xButton"
         app:layout_constraintTop_toBottomOf="@+id/oButton"
         app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/y" />
+        app:srcCompat="@drawable/y_button"
+        tools:srcCompat="@drawable/y_button" />
 
     <ImageButton
         android:id="@+id/zButton"
@@ -449,8 +449,8 @@
         app:layout_constraintStart_toEndOf="@+id/yButton"
         app:layout_constraintTop_toBottomOf="@+id/oButton"
         app:layout_wrapBehaviorInParent="horizontal_only"
-        app:srcCompat="@drawable/a"
-        tools:srcCompat="@drawable/z" />
+        app:srcCompat="@drawable/z_button"
+        tools:srcCompat="@drawable/z_button" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
