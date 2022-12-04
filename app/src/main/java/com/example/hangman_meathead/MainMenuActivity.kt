@@ -23,7 +23,7 @@ class MainMenuActivity : AppCompatActivity() {
         }
 
         binding.scoreButton.setOnClickListener{
-            val intentMain = Intent(this@MainMenuActivity, GameActivity::class.java)
+            val intentMain = Intent(this@MainMenuActivity, LeaderboardActivity::class.java)
             startActivity(intentMain)
         }
 
