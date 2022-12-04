@@ -8,9 +8,9 @@ import com.example.hangman_meathead.databinding.ViewScoreAdapterBinding
 
 class ScoreAdapter (private val scores : List<Score>) : RecyclerView.Adapter<ScoreAdapter.ViewHolder>() {
 
-    inner class ViewHolder(binding : ViewScoreAdapterBinding) : RecyclerView.ViewHolder(binding.root){
+    inner class ViewHolder(private val binding : ViewScoreAdapterBinding) : RecyclerView.ViewHolder(binding.root){
         fun bind(score : Score) {
-
+            binding.scoreName.text = score.name
         }
     }
 
