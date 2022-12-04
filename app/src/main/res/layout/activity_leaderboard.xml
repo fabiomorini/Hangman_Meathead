@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/backgroundleaderboard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
@@ -18,51 +18,58 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/signup_background" />
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="322dp"
-        android:layout_height="334dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView5"
-        app:srcCompat="@drawable/global_icon" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="324dp"
-        android:layout_height="6dp"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6"
-        tools:layout_editor_absoluteX="34dp" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="394dp"
-        android:layout_height="92dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-        app:srcCompat="@drawable/down_popup"
-        tools:layout_editor_absoluteX="-1dp" />
-
     <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="90dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginBottom="3dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/exit_button" />
-
-    <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/nextButtonLeaderboard"
         android:layout_width="90dp"
         android:layout_height="81dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="3dp"
         android:backgroundTint="#00FFFFFF"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-        app:layout_constraintEnd_toEndOf="@+id/imageView8"
+        app:layout_constraintBottom_toBottomOf="@+id/backgroundleaderboard"
+        app:layout_constraintEnd_toEndOf="@+id/downPopup"
         app:srcCompat="@drawable/next" />
+
+    <ImageButton
+        android:id="@+id/exitButtonLeaderboard"
+        android:layout_width="90dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="3dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/backgroundleaderboard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/exit_button" />
+
+    <ImageView
+        android:id="@+id/downPopup"
+        android:layout_width="394dp"
+        android:layout_height="92dp"
+        app:layout_constraintBottom_toBottomOf="@+id/backgroundleaderboard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/down_popup" />
+
+    <ImageView
+        android:id="@+id/titleLeaderboard"
+        android:layout_width="322dp"
+        android:layout_height="334dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/backgroundleaderboard"
+        app:srcCompat="@drawable/global_icon" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="345dp"
+        android:layout_height="353dp"
+        android:layout_marginBottom="70dp"
+        app:layout_constraintBottom_toBottomOf="@+id/downPopup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleLeaderboard"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
