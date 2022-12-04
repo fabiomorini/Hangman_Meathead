@@ -32,6 +32,7 @@ class GameActivity : AppCompatActivity() {
         binding.pauseButton.setOnClickListener{
             binding.pauseMenu.visibility = View.VISIBLE
         }
+
         //endregion Game
 
         //region Pause
@@ -103,5 +104,20 @@ class GameActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
+    }
+
+    fun ValidateKey()
+    {
+        //TODO (Needs implementation)
+    }
+
+    fun UpdateCharacter()
+    {
+        //TODO (Needs implementation)
+    }
+
+    fun Timer()
+    {
+        //TODO (Needs implementation)
     }
 }
