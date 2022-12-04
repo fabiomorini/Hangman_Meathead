@@ -51,7 +51,7 @@ class GameActivity : AppCompatActivity() {
         }
 
         binding.exitButton.setOnClickListener{
-            val intentMain = Intent(this@GameActivity, MainActivity::class.java)
+            val intentMain = Intent(this@GameActivity, MainMenuActivity::class.java)
             startActivity(intentMain)
 
             finish()
