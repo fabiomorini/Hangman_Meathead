@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/fabio.morini/StudioProjects/Hangman_Meathead/app/src/main/res/layout/activity_game.xml" value="0.17291666666666666" />
+        <entry key="..\:/Users/fabio.morini/StudioProjects/Hangman_Meathead/app/src/main/res/layout/activity_login.xml" value="0.4030110017371164" />
+        <entry key="..\:/Users/fabio.morini/StudioProjects/Hangman_Meathead/app/src/main/res/layout/activity_main.xml" value="0.3625" />
+        <entry key="..\:/Users/fabio.morini/StudioProjects/Hangman_Meathead/app/src/main/res/layout/activity_quotes.xml" value="0.3625" />
+        <entry key="..\:/Users/fabio.morini/StudioProjects/Hangman_Meathead/app/src/main/res/layout/activity_sign_up.xml" value="0.3625" />
+        <entry key="..\:/Users/fabio.morini/StudioProjects/Hangman_Meathead/app/src/main/res/layout/activity_splash_screen.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/fabio.morini/StudioProjects/Hangman_Meathead/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.332" />
+        <entry key="..\:/Users/fabio.morini/StudioProjects/Hangman_Meathead/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.332" />
+        <entry key="..\:/Users/joseadrian.guerra.ENTI/StudioProjects/Hangman_Meathead/app/src/main/res/layout/activity_login.xml" value="0.3625" />
+        <entry key="..\:/Users/joseadrian.guerra/Desktop/CDI/Android/Hangman_Meathead/app/src/main/res/layout/activity_main.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/joseadrian.guerra/Desktop/CDI/Interfaces/Hangman_Meathead/app/src/main/res/layout/activity_login.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/joseadrian.guerra/Desktop/CDI/Interfaces/Hangman_Meathead/app/src/main/res/layout/activity_quotes.xml" value="0.358695652173913" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

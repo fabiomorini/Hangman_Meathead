@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "242354147359",
+    "project_id": "meathead-project",
+    "storage_bucket": "meathead-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:242354147359:android:536c4baeef2fd4d03b852a",
+        "android_client_info": {
+          "package_name": "com.example.hangman_meathead"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "242354147359-i3a19nskusoh7hm780jv9c1i6qn89aqa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxyHtSMbO0XmEDHVV0HYIa6LyCngpEkqQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "242354147359-i3a19nskusoh7hm780jv9c1i6qn89aqa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

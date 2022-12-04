@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameActivity">
+
+    <ImageView
+        android:id="@+id/backgroundImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/asset_2" />
+
+    <ImageView
+        android:id="@+id/charImageView"
+        android:layout_width="282dp"
+        android:layout_height="397dp"
+        android:layout_marginStart="-32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hangman" />
+
+    <ImageButton
+        android:id="@+id/pauseButton"
+        android:layout_width="57dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerInside"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pause" />
+
+    <ImageView
+        android:id="@+id/buttonsBackgroundImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="@+id/backgroundImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/charImageView"
+        app:srcCompat="@drawable/asset_4" />
+
+    <TextView
+        android:id="@+id/hangmanText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:letterSpacing="1"
+        android:text="________"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="270dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintGuide_begin="449dp" />
+
+    <ImageButton
+        android:id="@+id/aButton"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/hangmanText"
+        app:layout_wrapBehaviorInParent="horizontal_only"
+        app:srcCompat="@drawable/a_button" />
+
+    <ImageButton
+        android:id="@+id/bButton"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        app:layout_constraintStart_toEndOf="@+id/aButton"
+        app:layout_constraintTop_toTopOf="@+id/aButton"
+        app:layout_wrapBehaviorInParent="horizontal_only"
+        app:srcCompat="@drawable/b_button"
+        tools:srcCompat="@drawable/b_button" />
+
+    <ImageButton
+        android:id="@+id/cButton"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        app:layout_constraintStart_toEndOf="@+id/bButton"
+        app:layout_constraintTop_toTopOf="@+id/aButton"
+        app:layout_wrapBehaviorInParent="horizontal_only"
+        app:srcCompat="@drawable/c_button"
+        tools:srcCompat="@drawable/c_button" />
+
+    <ImageButton
+        android:id="@+id/dButton"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        app:layout_constraintStart_toEndOf="@+id/cButton"
+        app:layout_constraintTop_toTopOf="@+id/aButton"
+        app:layout_wrapBehaviorInParent="horizontal_only"
+        app:srcCompat="@drawable/d_button"
+        tools:srcCompat="@drawable/d_button" />
+
+    <ImageButton
+        android:id="@+id/eButton"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        app:layout_constraintStart_toEndOf="@+id/dButton"
+        app:layout_constraintTop_toTopOf="@+id/aButton"
+        app:layout_wrapBehaviorInParent="horizontal_only"
+        app:srcCompat="@drawable/e_button"
+        tools:srcCompat="@drawable/e_button" />
+
+    <ImageButton
+        android:id="@+id/fButton"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        app:layout_constraintStart_toEndOf="@+id/eButton"
+        app:layout_constraintTop_toTopOf="@+id/aButton"
+        app:layout_wrapBehaviorInParent="horizontal_only"
+        app:srcCompat="@drawable/f_button"
+        tools:srcCompat="@drawable/f_button" />
+
+    <ImageButton
+        android:id="@+id/gButton"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        app:layout_constraintStart_toEndOf="@+id/fButton"
+        app:layout_constraintTop_toTopOf="@+id/aButton"
+        app:layout_wrapBehaviorInParent="horizontal_only"
+        app:srcCompat="@drawable/g_button"
+        tools:srcCompat="@drawable/g_button" />
+
+    <ImageButton
+        android:id="@+id/hButton"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/aButton"
+        app:layout_wrapBehaviorInParent="horizontal_only"
+        app:srcCompat="@drawable/h_button"
+        tools:srcCompat="@drawable/h_button" />
+
+    <ImageButton
+        android:id="@+id/iButton"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        app:layout_constraintStart_toEndOf="@+id/hButton"
+        app:layout_constraintTop_toBottomOf="@+id/bButton"
+        app:layout_wrapBehaviorInParent="horizontal_only"
+        app:srcCompat="@drawable/i_button"
+        tools:srcCompat="@drawable/i_button" />
+
+    <ImageButton
+        android:id="@+id/jButton"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        app:layout_constraintStart_toEndOf="@+id/iButton"
+        app:layout_constraintTop_toBottomOf="@+id/bButton"
+        app:layout_wrapBehaviorInParent="horizontal_only"
+        app:srcCompat="@drawable/j_button"
+        tools:srcCompat="@drawable/j_button" />
+
+    <ImageButton
+        android:id="@+id/kButton"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        app:layout_constraintStart_toEndOf="@+id/jButton"
+        app:layout_constraintTop_toBottomOf="@+id/bButton"
+        app:layout_wrapBehaviorInParent="horizontal_only"
+        app:srcCompat="@drawable/k_button"
+        tools:srcCompat="@drawable/k_button" />
+
+    <ImageButton
+        android:id="@+id/lButton"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        app:layout_constraintStart_toEndOf="@+id/kButton"
+        app:layout_constraintTop_toBottomOf="@+id/bButton"
+        app:layout_wrapBehaviorInParent="horizontal_only"
+        app:srcCompat="@drawable/l_button"
+        tools:srcCompat="@drawable/l_button" />
+
+    <ImageButton
+        android:id="@+id/mButton"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        app:layout_constraintStart_toEndOf="@+id/lButton"
+        app:layout_constraintTop_toBottomOf="@+id/bButton"
+        app:layout_wrapBehaviorInParent="horizontal_only"
+        app:srcCompat="@drawable/m_button"
+        tools:srcCompat="@drawable/m_button" />
+
+    <ImageButton
+        android:id="@+id/nButton"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        app:layout_constraintStart_toEndOf="@+id/mButton"
+        app:layout_constraintTop_toBottomOf="@+id/bButton"
+        app:layout_wrapBehaviorInParent="horizontal_only"
+        app:srcCompat="@drawable/n_button"
+        tools:srcCompat="@drawable/n_button" />
+
+    <ImageButton
+        android:id="@+id/ñButton"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/hButton"
+        app:layout_wrapBehaviorInParent="horizontal_only"
+        app:srcCompat="@drawable/spanish_n"
+        tools:srcCompat="@drawable/spanish_n" />
+
+    <ImageButton
+        android:id="@+id/oButton"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        app:layout_constraintStart_toEndOf="@+id/ñButton"
+        app:layout_constraintTop_toBottomOf="@+id/hButton"
+        app:layout_wrapBehaviorInParent="horizontal_only"
+        app:srcCompat="@drawable/o_button"
+        tools:srcCompat="@drawable/o_button" />
+
+    <ImageButton
+        android:id="@+id/pButton"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        app:layout_constraintStart_toEndOf="@+id/oButton"
+        app:layout_constraintTop_toBottomOf="@+id/hButton"
+        app:layout_wrapBehaviorInParent="horizontal_only"
+        app:srcCompat="@drawable/p_button"
+        tools:srcCompat="@drawable/p_button" />
+
+    <ImageButton
+        android:id="@+id/qButton"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        app:layout_constraintStart_toEndOf="@+id/pButton"
+        app:layout_constraintTop_toBottomOf="@+id/hButton"
+        app:layout_wrapBehaviorInParent="horizontal_only"
+        app:srcCompat="@drawable/q_button"
+        tools:srcCompat="@drawable/q_button" />
+
+    <ImageButton
+        android:id="@+id/rButton"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        app:layout_constraintStart_toEndOf="@+id/qButton"
+        app:layout_constraintTop_toBottomOf="@+id/hButton"
+        app:layout_wrapBehaviorInParent="horizontal_only"
+        app:srcCompat="@drawable/r_button"
+        tools:srcCompat="@drawable/r_button" />
+
+    <ImageButton
+        android:id="@+id/sButton"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        app:layout_constraintStart_toEndOf="@+id/rButton"
+        app:layout_constraintTop_toBottomOf="@+id/hButton"
+        app:layout_wrapBehaviorInParent="horizontal_only"
+        app:srcCompat="@drawable/s_button"
+        tools:srcCompat="@drawable/s_button" />
+
+    <ImageButton
+        android:id="@+id/tButton"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        app:layout_constraintStart_toEndOf="@+id/sButton"
+        app:layout_constraintTop_toBottomOf="@+id/hButton"
+        app:layout_wrapBehaviorInParent="horizontal_only"
+        app:srcCompat="@drawable/t_button"
+        tools:srcCompat="@drawable/t_button" />
+
+    <ImageButton
+        android:id="@+id/uButton"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/oButton"
+        app:layout_wrapBehaviorInParent="horizontal_only"
+        app:srcCompat="@drawable/u_button"
+        tools:srcCompat="@drawable/u_button" />
+
+    <ImageButton
+        android:id="@+id/vButton"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        app:layout_constraintStart_toEndOf="@+id/uButton"
+        app:layout_constraintTop_toBottomOf="@+id/oButton"
+        app:layout_wrapBehaviorInParent="horizontal_only"
+        app:srcCompat="@drawable/v_button"
+        tools:srcCompat="@drawable/v_button" />
+
+    <ImageButton
+        android:id="@+id/wButton"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        app:layout_constraintStart_toEndOf="@+id/vButton"
+        app:layout_constraintTop_toBottomOf="@+id/oButton"
+        app:layout_wrapBehaviorInParent="horizontal_only"
+        app:srcCompat="@drawable/w_button"
+        tools:srcCompat="@drawable/w_button" />
+
+    <ImageButton
+        android:id="@+id/xButton"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        app:layout_constraintStart_toEndOf="@+id/wButton"
+        app:layout_constraintTop_toBottomOf="@+id/oButton"
+        app:layout_wrapBehaviorInParent="horizontal_only"
+        app:srcCompat="@drawable/x_button"
+        tools:srcCompat="@drawable/x_button" />
+
+    <ImageButton
+        android:id="@+id/yButton"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        app:layout_constraintStart_toEndOf="@+id/xButton"
+        app:layout_constraintTop_toBottomOf="@+id/oButton"
+        app:layout_wrapBehaviorInParent="horizontal_only"
+        app:srcCompat="@drawable/y_button"
+        tools:srcCompat="@drawable/y_button" />
+
+    <ImageButton
+        android:id="@+id/zButton"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        app:layout_constraintStart_toEndOf="@+id/yButton"
+        app:layout_constraintTop_toBottomOf="@+id/oButton"
+        app:layout_wrapBehaviorInParent="horizontal_only"
+        app:srcCompat="@drawable/z_button"
+        tools:srcCompat="@drawable/z_button" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <FrameLayout
+        android:id="@+id/pauseMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="92dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/pauseBackground"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/pausebackground" />
+
+            <ImageButton
+                android:id="@+id/closeButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:background="#00FFFFFF"
+                android:scaleType="fitCenter"
+                app:layout_constraintEnd_toEndOf="@+id/pauseBackground"
+                app:layout_constraintTop_toTopOf="@+id/pauseBackground"
+                app:srcCompat="@drawable/close" />
+
+            <ImageView
+                android:id="@+id/pauseTextImage"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/pausetext" />
+
+            <ImageButton
+                android:id="@+id/settingsButton"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginBottom="16dp"
+                android:background="#00FFFFFF"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toTopOf="@+id/audioButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/options" />
+
+            <ImageButton
+                android:id="@+id/audioButton"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="#00FFFFFF"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/audioon" />
+
+            <ImageButton
+                android:id="@+id/retryButton"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="16dp"
+                android:background="#00FFFFFF"
+                android:scaleType="fitCenter"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/audioButton"
+                app:srcCompat="@drawable/retry" />
+
+            <ImageButton
+                android:id="@+id/exitButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginBottom="32dp"
+                android:background="#00FFFFFF"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/exit" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/settingsMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="92dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="84dp" />
+
+            <ImageView
+                android:id="@+id/settingsBackground"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/pausebackground" />
+
+            <ImageButton
+                android:id="@+id/closeSettingsButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:background="#00FFFFFF"
+                android:scaleType="fitCenter"
+                app:layout_constraintEnd_toEndOf="@+id/settingsBackground"
+                app:layout_constraintTop_toTopOf="@+id/settingsBackground"
+                app:srcCompat="@drawable/close" />
+
+            <ImageView
+                android:id="@+id/settingsTextImage"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/settingstext" />
+
+            <ImageButton
+                android:id="@+id/exitSettingsButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginBottom="32dp"
+                android:background="#00FFFFFF"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/exit" />
+
+            <ImageView
+                android:id="@+id/audioTextImage"
+                android:layout_width="65dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/notificationsTextImage"
+                app:layout_constraintStart_toStartOf="@+id/guideline2"
+                app:srcCompat="@drawable/audiotext" />
+
+            <Switch
+                android:id="@+id/audioSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="64dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/notificationsTextImage"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageView
+                android:id="@+id/notificationsTextImage"
+                android:layout_width="140dp"
+                android:layout_height="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/notificationstext" />
+
+            <Switch
+                android:id="@+id/notificationsSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="64dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/hintsTextImage"
+                android:layout_width="60dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="@+id/guideline2"
+                app:layout_constraintTop_toBottomOf="@+id/notificationsTextImage"
+                app:srcCompat="@drawable/hintstext" />
+
+            <Switch
+                android:id="@+id/switch3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="64dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/notificationsTextImage" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

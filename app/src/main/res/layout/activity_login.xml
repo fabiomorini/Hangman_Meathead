@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/loginLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#FFFFFF"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/loginBackgroundImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:tintMode="src_in"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/signup_background"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/loginLogoImageView"
+        android:layout_width="263dp"
+        android:layout_height="256dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@+id/inputMailWraper"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/loginBackgroundImageView"
+        app:layout_constraintTop_toTopOf="@+id/loginBackgroundImageView"
+        app:srcCompat="@drawable/logo" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputMailWraper"
+        android:layout_width="220dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="320dp"
+        android:background="@drawable/login_input"
+        android:hint="Email"
+        android:textColorHint="#4E5052"
+        app:boxBackgroundMode="none"
+        app:hintTextColor="#9E4539"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+
+            android:id="@+id/input_Mail"
+            style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foregroundTint="#00FFFFFF"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#4E5052"
+            android:textColorHighlight="#4E5052"
+            android:textColorHint="#4E5052"
+            android:textColorLink="#4E5052"
+            android:translationX="40dp"
+            android:translationY="-12dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputPasswordWraper"
+        android:layout_width="220dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/password_input"
+        android:hint="Password"
+        android:textColorHint="#4E5052"
+        app:boxBackgroundMode="none"
+        app:hintTextColor="#9E4539"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputMailWraper">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_Password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:password="true"
+            android:singleLine="true"
+            android:textColor="#4E5052"
+            android:translationX="40dp"
+            android:translationY="-12dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageButton
+        android:id="@+id/forgotPasswordButton"
+        style="@android:style/Widget.DeviceDefault.ImageButton"
+        android:layout_width="183dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputPasswordWraper"
+        app:srcCompat="@drawable/untitled_2" />
+
+    <ImageButton
+        android:id="@+id/signUpButton"
+        android:layout_width="280dp"
+        android:layout_height="105dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginButton"
+        app:srcCompat="@drawable/login_signup" />
+
+    <ImageButton
+        android:id="@+id/loginButton"
+        android:layout_width="146dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="-100dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputPasswordWraper"
+        app:srcCompat="@drawable/login_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
