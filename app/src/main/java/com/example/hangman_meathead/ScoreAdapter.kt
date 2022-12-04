@@ -1,24 +1,32 @@
 package com.example.hangman_meathead
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.hangman_meathead.databinding.ViewScoreAdapterBinding
 
-class ScoreAdapter : RecyclerView.Adapter<ScoreAdapter.ViewHolder>() {
+class ScoreAdapter (private val scores : List<Score>) : RecyclerView.Adapter<ScoreAdapter.ViewHolder>() {
 
-    inner class ViewHolder(view : View) : RecyclerView.ViewHolder(view){
+    inner class ViewHolder(binding : ViewScoreAdapterBinding) : RecyclerView.ViewHolder(binding.root){
+        fun bind(score : Score) {
 
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        TODO("Not yet implemented")
+        val binding = ViewScoreAdapterBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        )
+
+        return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.bind(scores[position])
     }
 
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-    }
+    override fun getItemCount() = scores.size
 }
