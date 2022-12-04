@@ -15,13 +15,13 @@ class LeaderboardActivity : AppCompatActivity() {
 
         binding.recycler.adapter = ScoreAdapter(
             listOf(
-                Score("Name1", "url1"),
-                Score("Name2", "url2"),
-                Score("Name3", "url3"),
-                Score("Name4", "url4"),
-                Score("Name5", "url5"),
-                Score("Name6", "url6"),
-                Score("Name7", "url7")
+                Score("Name1", "123000","url1"),
+                Score("Name2", "12300","url2"),
+                Score("Name3", "1230","url3"),
+                Score("Name4", "103","url4"),
+                Score("Name5", "23","url5"),
+                Score("Name6", "13","url6"),
+                Score("Name7", "3","url7")
             )
         )
     }

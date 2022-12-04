@@ -43,15 +43,6 @@ class GameActivity : AppCompatActivity() {
             binding.settingsMenu.visibility = View.VISIBLE
         }
 
-//        binding.audioButton.setOnClickListener{
-//
-//            binding.audioSwitch.setChecked(!sharedPrefs.getBoolean("audioIsActive", true))
-//            editor.putBoolean("audioIsActive", !sharedPrefs.getBoolean("audioIsActive", true))
-//
-//            if(sharedPrefs.getBoolean("audioIsActive", true)) binding.audioButton.setImageResource(R.drawable.audioon)
-//            else binding.audioButton.setImageResource(R.drawable.audiooff)
-//        }
-
         binding.retryButton.setOnClickListener{
             val intentMain = Intent(this@GameActivity, GameActivity::class.java)
             startActivity(intentMain)
