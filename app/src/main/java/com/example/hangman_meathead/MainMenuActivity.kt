@@ -5,9 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.view.View
-import android.widget.Toast
 import com.example.hangman_meathead.databinding.ActivityMainMenuBinding
-import com.example.hangman_meathead.databinding.ActivitySplashScreenBinding
+import com.example.hangman_meathead.scores.LeaderboardActivity
 
 class MainMenuActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainMenuBinding
