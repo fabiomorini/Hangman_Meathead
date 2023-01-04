@@ -56,9 +56,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".QuotesActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="false">
             <meta-data
