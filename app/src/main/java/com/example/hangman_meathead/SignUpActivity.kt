@@ -7,10 +7,13 @@ import android.util.Patterns
 import android.widget.Toast
 import com.example.hangman_meathead.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class SignUpActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignUpBinding
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var db: FirebaseFirestore
+    val PREFERENCES_COLLECTION = "user_preferences"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +22,7 @@ class SignUpActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         firebaseAuth = FirebaseAuth.getInstance()
+        db = FirebaseFirestore.getInstance()
 
         binding.signUpSignUpButton.setOnClickListener {
 
@@ -28,12 +32,24 @@ class SignUpActivity : AppCompatActivity() {
 
             firebaseAuth.createUserWithEmailAndPassword(mail, password)
                 .addOnSuccessListener {
-                    val intentMain = Intent(this@SignUpActivity, MainActivity::class.java)
-                    startActivity(intentMain)
+                    val intentMainMenu = Intent(this@SignUpActivity, MainMenuActivity::class.java)
+                    startActivity(intentMainMenu)
 
                     PreferencesManager.setUsername(username)
                     PreferencesManager.setEmail(mail)
                     PreferencesManager.setPassword(password)
+
+                    val dbUser = FirebaseAuth.getInstance().currentUser
+                    val dbUID = dbUser?.uid.toString()
+
+                    val userPreferencesRef = db.collection(PREFERENCES_COLLECTION).document(dbUID)
+
+                    val data = hashMapOf(
+                        "username" to username,
+                        "sound_active" to true,
+                        "notifications_active" to true
+                    )
+                    userPreferencesRef.set(data)
 
                     Toast.makeText(this, "Registro del usuario ${username} creado con éxito", Toast.LENGTH_LONG).show()
 
