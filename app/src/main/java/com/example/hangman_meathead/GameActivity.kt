@@ -9,15 +9,22 @@ import android.widget.Switch
 import android.widget.Toast
 import com.example.hangman_meathead.databinding.ActivityGameBinding
 import com.example.hangman_meathead.databinding.ActivityLoginBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class GameActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGameBinding
+    private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var db: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        firebaseAuth = FirebaseAuth.getInstance()
+        db = FirebaseFirestore.getInstance()
 
         binding.audioSwitch.isChecked = PreferencesManager.isSoundActive()
         binding.notificationsSwitch.isChecked = PreferencesManager.isNotificationsActive()
@@ -91,6 +98,22 @@ class GameActivity : AppCompatActivity() {
             binding.settingsMenu.visibility = View.INVISIBLE
         }
         //endregion Settings
+    }
+
+    override fun onPause() {
+        val dbUser = FirebaseAuth.getInstance().currentUser
+        val dbUID = dbUser?.uid.toString()
+
+        val userPreferencesRef = db.collection("user_preferences").document(dbUID)
+
+        val data = hashMapOf(
+            "username" to PreferencesManager.getUsername(),
+            "sound_active" to PreferencesManager.isSoundActive(),
+            "notifications_active" to PreferencesManager.isNotificationsActive()
+        )
+        userPreferencesRef.set(data)
+
+        super.onPause()
     }
 
     fun ValidateKey()
