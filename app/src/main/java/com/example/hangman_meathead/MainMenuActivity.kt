@@ -38,7 +38,6 @@ class MainMenuActivity : AppCompatActivity() {
                 PreferencesManager.setUsername(username)
                 PreferencesManager.setSoundActive(soundActive)
                 PreferencesManager.setNotificationsActive(notificationsActive)
-                Toast.makeText(this, "User: $username, sound: $soundActive, notifications: $notificationsActive", Toast.LENGTH_LONG).show()
             }
         }
 
