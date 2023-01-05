@@ -6,10 +6,11 @@ import android.os.Bundle
 import android.widget.Toast
 import com.example.hangman_meathead.databinding.ActivityMainBinding
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityMainBinding
+    private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,17 +18,33 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        binding.buttonToast.setOnClickListener{
-//            Toast.makeText(this, "Hola, soy un Toast", Toast.LENGTH_LONG).show()
-//        }
+        firebaseAuth = FirebaseAuth.getInstance()
+
+        val loadedEmail: String = PreferencesManager.getEmail()
+        val loadedPassword: String = PreferencesManager.getPassword()
 
         binding.tapimage.setOnClickListener{
-            /*Snackbar.make(binding.root, "Hola, soy un Snackbar", Snackbar.LENGTH_LONG)
-                .setAction("Undo"){
-                    //Code to undo}.show()
-                }.show()*/
-            val intentLogin = Intent(this@MainActivity, LoginActivity::class.java)
-            startActivity(intentLogin)
+            if(loadedEmail != "" && loadedPassword != ""){
+                firebaseAuth.signInWithEmailAndPassword(loadedEmail, loadedPassword)
+                .addOnSuccessListener {
+                    val intentMain = Intent(this@MainActivity, MainMenuActivity::class.java)
+                    startActivity(intentMain)
+
+                    finish()
+
+                }.addOnFailureListener {
+                    val intentLogin = Intent(this@MainActivity, LoginActivity::class.java)
+                    startActivity(intentLogin)
+
+                    finish()
+                }
+            }
+            else{
+                val intentLogin = Intent(this@MainActivity, LoginActivity::class.java)
+                startActivity(intentLogin)
+
+                finish()
+            }
         }
     }
 }

@@ -31,7 +31,11 @@ class SignUpActivity : AppCompatActivity() {
                     val intentMain = Intent(this@SignUpActivity, MainActivity::class.java)
                     startActivity(intentMain)
 
-                    Toast.makeText(this, "Registro del mail ${mail} creado con éxito", Toast.LENGTH_LONG).show()
+                    PreferencesManager.setUsername(username)
+                    PreferencesManager.setEmail(mail)
+                    PreferencesManager.setPassword(password)
+
+                    Toast.makeText(this, "Registro del usuario ${username} creado con éxito", Toast.LENGTH_LONG).show()
 
                     finish()
 
@@ -40,7 +44,7 @@ class SignUpActivity : AppCompatActivity() {
                 }
         }
 
-        binding.inputSignUpMail.setOnFocusChangeListener { view, hasFocus ->
+        binding.inputSignUpMail.setOnFocusChangeListener { _, hasFocus ->
 
             if (!hasFocus) {
                 val mail = binding.inputSignUpMail.text.toString()

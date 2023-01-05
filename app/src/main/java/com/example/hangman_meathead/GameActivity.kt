@@ -19,14 +19,8 @@ class GameActivity : AppCompatActivity() {
         binding = ActivityGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //region Shared Preferences
-        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this)
-        val editor = sharedPrefs.edit()
-        binding.audioSwitch.setChecked(sharedPrefs.getBoolean("audioIsActive", true))
-        val username = sharedPrefs.getString("username", null)
-        val email = sharedPrefs.getString("email", null)
-        val password = sharedPrefs.getString("password", null)
-        //endregion Shared Preferences
+        binding.audioSwitch.isChecked = PreferencesManager.isSoundActive()
+        binding.notificationsSwitch.isChecked = PreferencesManager.isNotificationsActive()
 
         //region Game
         binding.pauseButton.setOnClickListener{
@@ -68,11 +62,28 @@ class GameActivity : AppCompatActivity() {
 
         binding.audioSwitch.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                editor.putBoolean("audioIsActive", true)
+                PreferencesManager.setSoundActive(true)
             } else {
-                editor.putBoolean("audioIsActive", false)
+                PreferencesManager.setSoundActive(false)
             }
-            editor.apply()
+        }
+
+        binding.notificationsSwitch.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                PreferencesManager.setNotificationsActive(true)
+            } else {
+                PreferencesManager.setNotificationsActive(false)
+            }
+        }
+
+        binding.hintsSwitch.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                binding.hintsSwitch.isChecked = false
+                Toast.makeText(this, "Under construction!", Toast.LENGTH_LONG).show()
+            } else {
+                binding.hintsSwitch.isChecked = false
+                Toast.makeText(this, "Under construction!", Toast.LENGTH_LONG).show()
+            }
         }
 
         binding.exitSettingsButton.setOnClickListener{

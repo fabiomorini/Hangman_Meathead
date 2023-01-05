@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.view.View
+import android.widget.Toast
 import com.example.hangman_meathead.databinding.ActivityMainMenuBinding
 import com.example.hangman_meathead.scores.LeaderboardActivity
 
@@ -17,14 +18,8 @@ class MainMenuActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
-        //region Shared Preferences
-        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this)
-        val editor = sharedPrefs.edit()
-        binding.audioSwitch.setChecked(sharedPrefs.getBoolean("audioIsActive", true))
-        val username = sharedPrefs.getString("username", null)
-        val email = sharedPrefs.getString("email", null)
-        val password = sharedPrefs.getString("password", null)
-        //endregion Shared Preferences
+        binding.audioSwitch.isChecked = PreferencesManager.isSoundActive()
+        binding.notificationsSwitch.isChecked = PreferencesManager.isNotificationsActive()
 
         binding.playButton.setOnClickListener{
             val intentMain = Intent(this@MainMenuActivity, GameActivity::class.java)
@@ -47,11 +42,28 @@ class MainMenuActivity : AppCompatActivity() {
 
         binding.audioSwitch.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                editor.putBoolean("audioIsActive", true)
+                PreferencesManager.setSoundActive(true)
             } else {
-                editor.putBoolean("audioIsActive", false)
+                PreferencesManager.setSoundActive(false)
             }
-            editor.apply()
+        }
+
+        binding.notificationsSwitch.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                PreferencesManager.setNotificationsActive(true)
+            } else {
+                PreferencesManager.setNotificationsActive(false)
+            }
+        }
+
+        binding.hintsSwitch.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                binding.hintsSwitch.isChecked = false
+                Toast.makeText(this, "Under construction!", Toast.LENGTH_LONG).show()
+            } else {
+                binding.hintsSwitch.isChecked = false
+                Toast.makeText(this, "Under construction!", Toast.LENGTH_LONG).show()
+            }
         }
 
         binding.exitSettingsButton.setOnClickListener{
