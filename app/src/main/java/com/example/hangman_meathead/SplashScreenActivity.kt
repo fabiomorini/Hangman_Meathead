@@ -17,14 +17,9 @@ class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
-
         setContentView(binding.root)
 
-        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this)
-        val audioIsActive = sharedPrefs.getBoolean("audioIsActive", true)
-        val username = sharedPrefs.getString("username", null)
-        val email = sharedPrefs.getString("email", null)
-        val password = sharedPrefs.getString("password", null)
+        PreferencesManager.init(this)
 
         CoroutineScope(Dispatchers.Default).launch {
             delay(3000)

@@ -19,25 +19,7 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this)
-        val editor = sharedPrefs.edit()
-        val loadedEmail = sharedPrefs.getString("email", null)
-        val loadedPassword = sharedPrefs.getString("password", null)
-
         firebaseAuth = FirebaseAuth.getInstance()
-
-        if(loadedEmail != null && loadedPassword != null){
-            firebaseAuth.signInWithEmailAndPassword(loadedEmail, loadedPassword)
-            .addOnSuccessListener {
-                val intentMain = Intent(this@LoginActivity, MainMenuActivity::class.java)
-                startActivity(intentMain)
-
-                finish()
-
-            }.addOnFailureListener {
-                Toast.makeText(this, "Login incorrecto!", Toast.LENGTH_LONG).show()
-            }
-        }
 
         binding.loginButton.setOnClickListener {
             val email = binding.inputMail.text.toString()
@@ -48,9 +30,8 @@ class LoginActivity : AppCompatActivity() {
                 val intentMain = Intent(this@LoginActivity, MainMenuActivity::class.java)
                 startActivity(intentMain)
 
-                editor.putString("email", binding.inputMail.text.toString())
-                editor.putString("password", binding.inputPassword.text.toString())
-                editor.apply()
+                PreferencesManager.setEmail(binding.inputMail.text.toString())
+                PreferencesManager.setPassword(binding.inputPassword.text.toString())
 
                 finish()
 
@@ -59,7 +40,7 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
-        binding.inputMail.setOnFocusChangeListener { view, hasFocus ->
+        binding.inputMail.setOnFocusChangeListener { _, hasFocus ->
 
             if (!hasFocus) {
                 val mail = binding.inputMail.text.toString()
