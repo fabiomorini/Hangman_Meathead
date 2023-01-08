@@ -125,7 +125,7 @@ class GameActivity : AppCompatActivity() {
 
     fun nextWord(){
         val outside = Retrofit.Builder()
-            .baseUrl("http://hangman.enti.cat:5002/new/")
+            .baseUrl("http://hangman.enti.cat:5002/new?lang=en")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -135,6 +135,8 @@ class GameActivity : AppCompatActivity() {
             override fun onResponse(call: Call<String>, response: Response<String>) {
                 val word = response.body()
                 binding.hangmanText.text = word;
+
+                Toast.makeText(this@GameActivity, word.toString(), Toast.LENGTH_LONG).show()
             }
 
             override fun onFailure(call: Call<String>, t: Throwable) {
