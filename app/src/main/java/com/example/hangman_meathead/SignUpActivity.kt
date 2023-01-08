@@ -8,6 +8,7 @@ import android.widget.Toast
 import com.example.hangman_meathead.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import java.util.*
 
 class SignUpActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignUpBinding
@@ -39,19 +40,30 @@ class SignUpActivity : AppCompatActivity() {
                     PreferencesManager.setEmail(mail)
                     PreferencesManager.setPassword(password)
 
+                    //Estos datos los guardaremos también en las funciones onPause de
+                    //las activity MainMenu y Game, desde aquí
+                    val currentDate = Calendar.getInstance().time.toString()
                     val dbUser = FirebaseAuth.getInstance().currentUser
                     val dbUID = dbUser?.uid.toString()
 
-                    val userPreferencesRef = db.collection(PREFERENCES_COLLECTION).document(dbUID)
+                    val userPreferencesRef = db.collection("user_preferences").document(dbUID)
 
                     val data = hashMapOf(
-                        "username" to username,
-                        "sound_active" to true,
-                        "notifications_active" to true
+                        "username" to PreferencesManager.getUsername(),
+                        "sound_active" to PreferencesManager.isSoundActive(),
+                        "notifications_active" to PreferencesManager.isNotificationsActive(),
+                        "last_connection" to currentDate
                     )
                     userPreferencesRef.set(data)
 
-                    Toast.makeText(this, "Registro del usuario ${username} creado con éxito", Toast.LENGTH_LONG).show()
+                    PreferencesManager.setLastConnection(currentDate)
+                    //Hasta aquí. Literalmente, copiaremos este código
+
+                    Toast.makeText(
+                        this,
+                        "Registro del usuario ${username} creado con éxito",
+                        Toast.LENGTH_LONG
+                    ).show()
 
                     finish()
 
@@ -72,14 +84,14 @@ class SignUpActivity : AppCompatActivity() {
             }
         }
 
-        binding.signUpLogInButton.setOnClickListener{
+        binding.signUpLogInButton.setOnClickListener {
             val intentMain = Intent(this@SignUpActivity, LoginActivity::class.java)
             startActivity(intentMain)
 
             finish()
         }
 
-        binding.countryButton.setOnClickListener{
+        binding.countryButton.setOnClickListener {
             Toast.makeText(this, "Under construction!", Toast.LENGTH_LONG).show()
         }
     }

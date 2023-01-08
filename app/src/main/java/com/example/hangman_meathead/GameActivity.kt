@@ -1,16 +1,14 @@
 package com.example.hangman_meathead
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.view.View
-import android.widget.Switch
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.hangman_meathead.databinding.ActivityGameBinding
-import com.example.hangman_meathead.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import java.util.*
 
 class GameActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGameBinding
@@ -30,30 +28,30 @@ class GameActivity : AppCompatActivity() {
         binding.notificationsSwitch.isChecked = PreferencesManager.isNotificationsActive()
 
         //region Game
-        binding.pauseButton.setOnClickListener{
+        binding.pauseButton.setOnClickListener {
             binding.pauseMenu.visibility = View.VISIBLE
         }
 
         //endregion Game
 
         //region Pause
-        binding.closeButton.setOnClickListener{
+        binding.closeButton.setOnClickListener {
             binding.pauseMenu.visibility = View.INVISIBLE
         }
 
-        binding.settingsButton.setOnClickListener{
+        binding.settingsButton.setOnClickListener {
             binding.pauseMenu.visibility = View.INVISIBLE
             binding.settingsMenu.visibility = View.VISIBLE
         }
 
-        binding.retryButton.setOnClickListener{
+        binding.retryButton.setOnClickListener {
             val intentMain = Intent(this@GameActivity, GameActivity::class.java)
             startActivity(intentMain)
 
             finish()
         }
 
-        binding.exitButton.setOnClickListener{
+        binding.exitButton.setOnClickListener {
             val intentMain = Intent(this@GameActivity, MainMenuActivity::class.java)
             startActivity(intentMain)
 
@@ -62,7 +60,7 @@ class GameActivity : AppCompatActivity() {
         //endregion Pause
 
         //region Settings
-        binding.closeSettingsButton.setOnClickListener{
+        binding.closeSettingsButton.setOnClickListener {
             binding.pauseMenu.visibility = View.VISIBLE
             binding.settingsMenu.visibility = View.INVISIBLE
         }
@@ -93,7 +91,7 @@ class GameActivity : AppCompatActivity() {
             }
         }
 
-        binding.exitSettingsButton.setOnClickListener{
+        binding.exitSettingsButton.setOnClickListener {
             binding.pauseMenu.visibility = View.VISIBLE
             binding.settingsMenu.visibility = View.INVISIBLE
         }
@@ -101,6 +99,7 @@ class GameActivity : AppCompatActivity() {
     }
 
     override fun onPause() {
+        val currentDate = Calendar.getInstance().time.toString()
         val dbUser = FirebaseAuth.getInstance().currentUser
         val dbUID = dbUser?.uid.toString()
 
@@ -109,25 +108,25 @@ class GameActivity : AppCompatActivity() {
         val data = hashMapOf(
             "username" to PreferencesManager.getUsername(),
             "sound_active" to PreferencesManager.isSoundActive(),
-            "notifications_active" to PreferencesManager.isNotificationsActive()
+            "notifications_active" to PreferencesManager.isNotificationsActive(),
+            "last_connection" to currentDate
         )
         userPreferencesRef.set(data)
+
+        PreferencesManager.setLastConnection(currentDate)
 
         super.onPause()
     }
 
-    fun ValidateKey()
-    {
+    fun ValidateKey() {
         //TODO (Needs implementation)
     }
 
-    fun UpdateCharacter()
-    {
+    fun UpdateCharacter() {
         //TODO (Needs implementation)
     }
 
-    fun Timer()
-    {
+    fun Timer() {
         //TODO (Needs implementation)
     }
 }

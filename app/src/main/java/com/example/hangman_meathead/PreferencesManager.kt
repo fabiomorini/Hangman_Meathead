@@ -2,6 +2,7 @@ package com.example.hangman_meathead
 
 import android.content.Context
 import android.content.SharedPreferences
+import java.util.*
 
 class PreferencesManager {
 
@@ -11,6 +12,7 @@ class PreferencesManager {
         private const val PREFERENCE_PASSWORD = "password"
         private const val PREFERENCE_SOUND_ACTIVE = "sound_active"
         private const val PREFERENCE_NOTIFICATIONS_ACTIVE = "notifications_active"
+        private const val PREFERENCE_LAST_CONNECTION = "last_connection"
 
         private lateinit var preferences: SharedPreferences
 
@@ -65,6 +67,19 @@ class PreferencesManager {
         fun setNotificationsActive(active: Boolean) {
             val editor = preferences.edit()
             editor.putBoolean(PREFERENCE_NOTIFICATIONS_ACTIVE, active)
+            editor.apply()
+        }
+
+        fun getLastConnection(): String {
+            return preferences.getString(
+                PREFERENCE_LAST_CONNECTION,
+                Calendar.getInstance().time.toString()
+            ).toString()
+        }
+
+        fun setLastConnection(lastConnection: String) {
+            val editor = preferences.edit()
+            editor.putString(PREFERENCE_LAST_CONNECTION, lastConnection)
             editor.apply()
         }
     }

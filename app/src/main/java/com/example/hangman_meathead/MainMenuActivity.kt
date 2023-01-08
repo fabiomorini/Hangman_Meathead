@@ -1,5 +1,8 @@
 package com.example.hangman_meathead
 
+import android.app.AlarmManager
+import android.app.PendingIntent
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,6 +12,7 @@ import com.example.hangman_meathead.databinding.ActivityMainMenuBinding
 import com.example.hangman_meathead.scores.LeaderboardActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import java.util.*
 
 class MainMenuActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainMenuBinding
@@ -24,6 +28,8 @@ class MainMenuActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
         db = FirebaseFirestore.getInstance()
 
+        val currentDate = Calendar.getInstance().time.toString()
+
         val dbUser = FirebaseAuth.getInstance().currentUser
         val dbUID = dbUser?.uid.toString()
 
@@ -32,34 +38,50 @@ class MainMenuActivity : AppCompatActivity() {
         userPreferencesRef.get().addOnSuccessListener { document ->
             if (document != null) {
                 val username = document.getString("username").toString()
+                val lastConnection = document.getString("last_connection") ?: currentDate
                 val soundActive = document.getBoolean("sound_active") ?: true
                 val notificationsActive = document.getBoolean("notifications_active") ?: true
 
                 PreferencesManager.setUsername(username)
                 PreferencesManager.setSoundActive(soundActive)
                 PreferencesManager.setNotificationsActive(notificationsActive)
+                PreferencesManager.setLastConnection(lastConnection)
             }
         }
+
+        // Ahora que ya tenemos disponible la última fecha de acceso del usuario a la app
+        // Programa el servicio para que se ejecute cada 24 horas, desde aquí
+        val alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val intent = Intent(this, ConnectionCheckService::class.java)
+        val pendingIntent = PendingIntent.getService(this, 0, intent, 0)
+        val interval: Long = 24 * 60 * 60 * 1000 // 24 horas en milisegundos
+        alarmManager.setInexactRepeating(
+            AlarmManager.ELAPSED_REALTIME_WAKEUP,
+            interval,
+            interval,
+            pendingIntent
+        )
+        //Hasta aquí
 
         binding.audioSwitch.isChecked = PreferencesManager.isSoundActive()
         binding.notificationsSwitch.isChecked = PreferencesManager.isNotificationsActive()
 
-        binding.playButton.setOnClickListener{
+        binding.playButton.setOnClickListener {
             val intentMain = Intent(this@MainMenuActivity, GameActivity::class.java)
             startActivity(intentMain)
         }
 
-        binding.scoreButton.setOnClickListener{
+        binding.scoreButton.setOnClickListener {
             val intentMain = Intent(this@MainMenuActivity, LeaderboardActivity::class.java)
             startActivity(intentMain)
         }
 
-        binding.settingsButton.setOnClickListener{
+        binding.settingsButton.setOnClickListener {
             binding.settingsMenu.visibility = View.VISIBLE
         }
 
         //region Settings
-        binding.closeSettingsButton.setOnClickListener{
+        binding.closeSettingsButton.setOnClickListener {
             binding.settingsMenu.visibility = View.INVISIBLE
         }
 
@@ -89,13 +111,14 @@ class MainMenuActivity : AppCompatActivity() {
             }
         }
 
-        binding.exitSettingsButton.setOnClickListener{
+        binding.exitSettingsButton.setOnClickListener {
             binding.settingsMenu.visibility = View.INVISIBLE
         }
         //endregion Settings
     }
 
     override fun onPause() {
+        val currentDate = Calendar.getInstance().time.toString()
         val dbUser = FirebaseAuth.getInstance().currentUser
         val dbUID = dbUser?.uid.toString()
 
@@ -104,9 +127,12 @@ class MainMenuActivity : AppCompatActivity() {
         val data = hashMapOf(
             "username" to PreferencesManager.getUsername(),
             "sound_active" to PreferencesManager.isSoundActive(),
-            "notifications_active" to PreferencesManager.isNotificationsActive()
+            "notifications_active" to PreferencesManager.isNotificationsActive(),
+            "last_connection" to currentDate
         )
         userPreferencesRef.set(data)
+
+        PreferencesManager.setLastConnection(currentDate)
 
         super.onPause()
     }
