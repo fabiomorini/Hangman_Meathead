@@ -11,6 +11,11 @@ import com.example.hangman_meathead.databinding.ActivityGameBinding
 import com.example.hangman_meathead.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class GameActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGameBinding
@@ -33,6 +38,8 @@ class GameActivity : AppCompatActivity() {
         binding.pauseButton.setOnClickListener{
             binding.pauseMenu.visibility = View.VISIBLE
         }
+
+        nextWord()
 
         //endregion Game
 
@@ -115,6 +122,27 @@ class GameActivity : AppCompatActivity() {
 
         super.onPause()
     }
+
+    fun nextWord(){
+        val outside = Retrofit.Builder()
+            .baseUrl("http://hangman.enti.cat:5002/new/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        val services = outside.create(HangmanAPI::class.java)
+        services.getRandomWord().enqueue(object: Callback<String> {
+
+            override fun onResponse(call: Call<String>, response: Response<String>) {
+                val word = response.body()
+                binding.hangmanText.text = word;
+            }
+
+            override fun onFailure(call: Call<String>, t: Throwable) {
+
+            }
+        })
+    }
+
 
     fun ValidateKey()
     {
