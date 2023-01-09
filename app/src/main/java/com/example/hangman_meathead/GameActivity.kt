@@ -39,7 +39,7 @@ class GameActivity : AppCompatActivity() {
             binding.pauseMenu.visibility = View.VISIBLE
         }
 
-        nextWord()
+        nextHangman()
 
         //endregion Game
 
@@ -123,23 +123,23 @@ class GameActivity : AppCompatActivity() {
         super.onPause()
     }
 
-    fun nextWord(){
+    fun nextHangman(){
         val outside = Retrofit.Builder()
             .baseUrl("http://hangman.enti.cat:5002/new?lang=en")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
         val services = outside.create(HangmanAPI::class.java)
-        services.getRandomWord().enqueue(object: Callback<String> {
+        services.getRandomWord().enqueue(object: Callback<Hangman> {
 
-            override fun onResponse(call: Call<String>, response: Response<String>) {
-                val word = response.body()
-                binding.hangmanText.text = word;
+            override fun onResponse(call: Call<Hangman>, response: Response<Hangman>) {
+                val hangman = response.body()
+                binding.hangmanText.text = hangman?.hangman ?: "404: Not found";
 
-                Toast.makeText(this@GameActivity, word.toString(), Toast.LENGTH_LONG).show()
+                Toast.makeText(this@GameActivity, hangman.toString(), Toast.LENGTH_LONG).show()
             }
 
-            override fun onFailure(call: Call<String>, t: Throwable) {
+            override fun onFailure(call: Call<Hangman>, t: Throwable) {
 
             }
         })
