@@ -47,168 +47,163 @@ class GameActivity : AppCompatActivity() {
 
         //region Letters
         binding.aButton.setOnClickListener(){
-            hangmanGame?.let { it1 -> services.sendLetter(it1.token, "a").execute() }
+            sendLetter("a")
             if(ValidateKey()) binding.aButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
             else binding.aButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
         }
 
         binding.bButton.setOnClickListener(){
-            hangmanGame?.let { it1 -> services.sendLetter(it1.token, "b").execute() }
+            sendLetter("b")
             if(ValidateKey()) binding.aButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
             else binding.aButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
         }
 
         binding.cButton.setOnClickListener(){
-            hangmanGame?.let { it1 -> services.sendLetter(it1.token, "c").execute() }
+            sendLetter("c")
             if(ValidateKey()) binding.aButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
             else binding.aButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
         }
 
         binding.dButton.setOnClickListener(){
-            hangmanGame?.let { it1 -> services.sendLetter(it1.token, "d").execute() }
+            sendLetter("d")
             if(ValidateKey()) binding.aButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
             else binding.aButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
         }
 
         binding.eButton.setOnClickListener(){
-            hangmanGame?.let { it1 -> services.sendLetter(it1.token, "a").execute() }
-            if(ValidateKey()) binding.aButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
-            else binding.aButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
-        }
-
-        binding.aButton.setOnClickListener(){
-            hangmanGame?.let { it1 -> services.sendLetter(it1.token, "e").execute() }
+            sendLetter("e")
             if(ValidateKey()) binding.aButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
             else binding.aButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
         }
 
         binding.fButton.setOnClickListener(){
-            hangmanGame?.let { it1 -> services.sendLetter(it1.token, "f").execute() }
+            sendLetter("f")
             if(ValidateKey()) binding.aButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
             else binding.aButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
         }
 
         binding.gButton.setOnClickListener(){
-            hangmanGame?.let { it1 -> services.sendLetter(it1.token, "g").execute() }
+            sendLetter("g")
             if(ValidateKey()) binding.aButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
             else binding.aButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
         }
 
         binding.hButton.setOnClickListener(){
-            hangmanGame?.let { it1 -> services.sendLetter(it1.token, "h").execute() }
+            sendLetter("h")
             if(ValidateKey()) binding.aButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
             else binding.aButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
         }
 
         binding.iButton.setOnClickListener(){
-            hangmanGame?.let { it1 -> services.sendLetter(it1.token, "i").execute() }
+            sendLetter("i")
             if(ValidateKey()) binding.aButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
             else binding.aButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
         }
 
         binding.jButton.setOnClickListener(){
-            hangmanGame?.let { it1 -> services.sendLetter(it1.token, "j").execute() }
+            sendLetter("j")
             if(ValidateKey()) binding.aButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
             else binding.aButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
         }
 
         binding.kButton.setOnClickListener(){
-            hangmanGame?.let { it1 -> services.sendLetter(it1.token, "k").execute() }
+            sendLetter("k")
             if(ValidateKey()) binding.aButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
             else binding.aButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
         }
 
         binding.lButton.setOnClickListener(){
-            hangmanGame?.let { it1 -> services.sendLetter(it1.token, "l").execute() }
+            sendLetter("l")
             if(ValidateKey()) binding.aButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
             else binding.aButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
         }
 
         binding.mButton.setOnClickListener(){
-            hangmanGame?.let { it1 -> services.sendLetter(it1.token, "m").execute() }
+            sendLetter("m")
             if(ValidateKey()) binding.aButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
             else binding.aButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
         }
 
         binding.nButton.setOnClickListener(){
-            hangmanGame?.let { it1 -> services.sendLetter(it1.token, "n").execute() }
+            sendLetter("n")
             if(ValidateKey()) binding.aButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
             else binding.aButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
         }
 
         binding.nnButton.setOnClickListener(){
-            hangmanGame?.let { it1 -> services.sendLetter(it1.token, "ñ").execute() }
+            sendLetter("ñ")
             if(ValidateKey()) binding.aButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
             else binding.aButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
         }
 
         binding.oButton.setOnClickListener(){
-            hangmanGame?.let { it1 -> services.sendLetter(it1.token, "o").execute() }
+            sendLetter("o")
             if(ValidateKey()) binding.aButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
             else binding.aButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
         }
+
         binding.pButton.setOnClickListener(){
-            hangmanGame?.let { it1 -> services.sendLetter(it1.token, "p").execute() }
+            sendLetter("p")
             if(ValidateKey()) binding.aButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
             else binding.aButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
         }
 
         binding.qButton.setOnClickListener(){
-            hangmanGame?.let { it1 -> services.sendLetter(it1.token, "q").execute() }
+            sendLetter("q")
             if(ValidateKey()) binding.aButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
             else binding.aButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
         }
 
         binding.rButton.setOnClickListener(){
-            hangmanGame?.let { it1 -> services.sendLetter(it1.token, "r").execute() }
+            sendLetter("r")
             if(ValidateKey()) binding.aButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
             else binding.aButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
         }
 
         binding.sButton.setOnClickListener(){
-            hangmanGame?.let { it1 -> services.sendLetter(it1.token, "s").execute() }
+            sendLetter("s")
             if(ValidateKey()) binding.aButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
             else binding.aButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
         }
 
         binding.tButton.setOnClickListener(){
-            hangmanGame?.let { it1 -> services.sendLetter(it1.token, "t").execute() }
+            sendLetter("t")
             if(ValidateKey()) binding.aButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
             else binding.aButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
         }
 
         binding.uButton.setOnClickListener(){
-            hangmanGame?.let { it1 -> services.sendLetter(it1.token, "u").execute() }
+            sendLetter("u")
             if(ValidateKey()) binding.aButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
             else binding.aButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
         }
 
         binding.vButton.setOnClickListener(){
-            hangmanGame?.let { it1 -> services.sendLetter(it1.token, "v").execute() }
+            sendLetter("v")
             if(ValidateKey()) binding.aButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
             else binding.aButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
         }
 
         binding.wButton.setOnClickListener(){
-            hangmanGame?.let { it1 -> services.sendLetter(it1.token, "w").execute() }
+            sendLetter("w")
             if(ValidateKey()) binding.aButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
             else binding.aButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
         }
 
         binding.xButton.setOnClickListener(){
-            hangmanGame?.let { it1 -> services.sendLetter(it1.token, "x").execute() }
+            sendLetter("x")
             if(ValidateKey()) binding.aButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
             else binding.aButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
         }
 
         binding.yButton.setOnClickListener(){
-            hangmanGame?.let { it1 -> services.sendLetter(it1.token, "y").execute() }
+            sendLetter("y")
             if(ValidateKey()) binding.aButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
             else binding.aButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
         }
 
         binding.zButton.setOnClickListener(){
-            hangmanGame?.let { it1 -> services.sendLetter(it1.token, "z").execute() }
+            sendLetter("z")
             if(ValidateKey()) binding.aButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
             else binding.aButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
         }
@@ -313,10 +308,13 @@ class GameActivity : AppCompatActivity() {
                 binding.hangmanText.text = hangmanGame?.hangman ?: "404: Not found"
 
                 hangmanGame?.let {
-                    services.getHangmanGame(it.token).enqueue(object : Callback<Hangman> {
+                    //it.token
+                    //http://hangman.enti.cat:5002/game?token=69a24910-fd06-4faf-be2d-50e3ef2d4849
+                    services.getHangmanGame("69a24910-fd06-4faf-be2d-50e3ef2d4849").enqueue(object : Callback<Hangman> {
                         override fun onResponse(call: Call<Hangman>, response: Response<Hangman>) {
                             // procesa la respuesta aquí
                             hangmanGame = response.body()
+                            Toast.makeText(this@GameActivity, hangmanGame?.token.toString(), Toast.LENGTH_LONG).show()
                         }
 
                         override fun onFailure(call: Call<Hangman>, t: Throwable) {
@@ -332,6 +330,20 @@ class GameActivity : AppCompatActivity() {
         })
     }
 
+    private fun sendLetter(letter: String) {
+        // hace la llamada a sendLetter aquí
+        hangmanGame?.let {
+            services.sendLetter(it.token, letter).enqueue(object : Callback<Hangman> {
+                override fun onResponse(call: Call<Hangman>, response: Response<Hangman>) {
+                    Toast.makeText(this@GameActivity, letter + " enviada", Toast.LENGTH_LONG).show()
+                }
+
+                override fun onFailure(call: Call<Hangman>, t: Throwable) {
+                    // maneja el error aquí
+                }
+            })
+        }
+    }
 
     fun ValidateKey(): Boolean {
         if(currentIncorrectGuesses < hangmanGame?.incorrectGuesses?.toInt() ?: 5 &&
