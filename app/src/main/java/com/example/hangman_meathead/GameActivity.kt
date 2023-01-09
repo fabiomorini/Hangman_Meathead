@@ -125,7 +125,7 @@ class GameActivity : AppCompatActivity() {
 
     fun nextHangman(){
         val outside = Retrofit.Builder()
-            .baseUrl("http://hangman.enti.cat:5002/new?lang=en")
+            .baseUrl("http://hangman.enti.cat:5002/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 

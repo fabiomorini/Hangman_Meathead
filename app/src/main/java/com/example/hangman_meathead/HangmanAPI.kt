@@ -5,6 +5,6 @@ import retrofit2.http.GET
 
 interface HangmanAPI {
 
-    @GET("random.json/")
+    @GET("new?lang=en&maxTries=5")
     fun getRandomWord(): Call<Hangman>
 }
