@@ -4,10 +4,10 @@ import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.hangman_meathead.databinding.ActivityMainMenuBinding
 import com.example.hangman_meathead.scores.LeaderboardActivity
 import com.google.firebase.auth.FirebaseAuth

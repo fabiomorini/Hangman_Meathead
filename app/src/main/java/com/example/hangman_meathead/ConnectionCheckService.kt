@@ -19,7 +19,6 @@ class ConnectionCheckService : Service() {
         val currentDate = Calendar.getInstance().time
 
         //Mostramos la notificación para testearla
-        showNotification()
 
         // Obtén la fecha de la última conexión del usuario de la base de datos de Firebase
         val db = FirebaseFirestore.getInstance()
@@ -75,6 +74,7 @@ class ConnectionCheckService : Service() {
             .setContentText("¿Echas de menos los retos de nuestro juego? ¡Ven y demuestra que tu celebro no es solo decorativo!")
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             .setAutoCancel(true)
+
 
         // Crea un Intent para iniciar la actividad principal al pulsar la notificación
         val intent = Intent(this, SplashScreenActivity::class.java).apply {

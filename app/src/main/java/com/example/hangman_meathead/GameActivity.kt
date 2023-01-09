@@ -31,7 +31,6 @@ class GameActivity : AppCompatActivity() {
         binding.pauseButton.setOnClickListener {
             binding.pauseMenu.visibility = View.VISIBLE
         }
-
         //endregion Game
 
         //region Pause
