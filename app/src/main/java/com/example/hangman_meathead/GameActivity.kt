@@ -1,16 +1,14 @@
 package com.example.hangman_meathead
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.view.View
-import android.widget.Switch
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.hangman_meathead.databinding.ActivityGameBinding
-import com.example.hangman_meathead.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import java.util.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -108,6 +106,7 @@ class GameActivity : AppCompatActivity() {
     }
 
     override fun onPause() {
+        val currentDate = Calendar.getInstance().time.toString()
         val dbUser = FirebaseAuth.getInstance().currentUser
         val dbUID = dbUser?.uid.toString()
 
@@ -116,9 +115,12 @@ class GameActivity : AppCompatActivity() {
         val data = hashMapOf(
             "username" to PreferencesManager.getUsername(),
             "sound_active" to PreferencesManager.isSoundActive(),
-            "notifications_active" to PreferencesManager.isNotificationsActive()
+            "notifications_active" to PreferencesManager.isNotificationsActive(),
+            "last_connection" to currentDate
         )
         userPreferencesRef.set(data)
+
+        PreferencesManager.setLastConnection(currentDate)
 
         super.onPause()
     }
