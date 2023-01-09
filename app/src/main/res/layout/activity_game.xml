@@ -271,7 +271,7 @@
         tools:srcCompat="@drawable/n_button" />
 
     <ImageButton
-        android:id="@+id/ñButton"
+        android:id="@+id/nnButton"
         android:layout_width="52dp"
         android:layout_height="52dp"
         android:backgroundTint="#00FFFFFF"
@@ -292,7 +292,7 @@
         android:scaleType="centerCrop"
         android:scaleX="1.4"
         android:scaleY="1.4"
-        app:layout_constraintStart_toEndOf="@+id/ñButton"
+        app:layout_constraintStart_toEndOf="@+id/nnButton"
         app:layout_constraintTop_toBottomOf="@+id/hButton"
         app:layout_wrapBehaviorInParent="horizontal_only"
         app:srcCompat="@drawable/o_button"
