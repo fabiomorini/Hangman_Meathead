@@ -35,7 +35,7 @@ class GameActivity : AppCompatActivity() {
         binding.notificationsSwitch.isChecked = PreferencesManager.isNotificationsActive()
 
         //region Game
-        binding.pauseButton.setOnClickListener{
+        binding.pauseButton.setOnClickListener {
             binding.pauseMenu.visibility = View.VISIBLE
         }
 
@@ -44,23 +44,23 @@ class GameActivity : AppCompatActivity() {
         //endregion Game
 
         //region Pause
-        binding.closeButton.setOnClickListener{
+        binding.closeButton.setOnClickListener {
             binding.pauseMenu.visibility = View.INVISIBLE
         }
 
-        binding.settingsButton.setOnClickListener{
+        binding.settingsButton.setOnClickListener {
             binding.pauseMenu.visibility = View.INVISIBLE
             binding.settingsMenu.visibility = View.VISIBLE
         }
 
-        binding.retryButton.setOnClickListener{
+        binding.retryButton.setOnClickListener {
             val intentMain = Intent(this@GameActivity, GameActivity::class.java)
             startActivity(intentMain)
 
             finish()
         }
 
-        binding.exitButton.setOnClickListener{
+        binding.exitButton.setOnClickListener {
             val intentMain = Intent(this@GameActivity, MainMenuActivity::class.java)
             startActivity(intentMain)
 
@@ -69,7 +69,7 @@ class GameActivity : AppCompatActivity() {
         //endregion Pause
 
         //region Settings
-        binding.closeSettingsButton.setOnClickListener{
+        binding.closeSettingsButton.setOnClickListener {
             binding.pauseMenu.visibility = View.VISIBLE
             binding.settingsMenu.visibility = View.INVISIBLE
         }
@@ -100,7 +100,7 @@ class GameActivity : AppCompatActivity() {
             }
         }
 
-        binding.exitSettingsButton.setOnClickListener{
+        binding.exitSettingsButton.setOnClickListener {
             binding.pauseMenu.visibility = View.VISIBLE
             binding.settingsMenu.visibility = View.INVISIBLE
         }
@@ -123,20 +123,34 @@ class GameActivity : AppCompatActivity() {
         super.onPause()
     }
 
-    fun nextHangman(){
+    fun nextHangman() {
         val outside = Retrofit.Builder()
             .baseUrl("http://hangman.enti.cat:5002/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
         val services = outside.create(HangmanAPI::class.java)
-        services.getRandomWord().enqueue(object: Callback<Hangman> {
+        services.getRandomHangman().enqueue(object : Callback<Hangman> {
 
             override fun onResponse(call: Call<Hangman>, response: Response<Hangman>) {
                 val hangman = response.body()
                 binding.hangmanText.text = hangman?.hangman ?: "404: Not found";
 
                 Toast.makeText(this@GameActivity, hangman.toString(), Toast.LENGTH_LONG).show()
+
+                val hangmanGame = outside.create(HangmanAPI::class.java)
+                val token = hangman?.token.toString()
+                hangmanGame.getHangman(token)?.enqueue(object : Callback<Hangman> {
+
+                    override fun onResponse(call: Call<Hangman>, response: Response<Hangman>) {
+
+                        Toast.makeText(this@GameActivity, hangman.toString(), Toast.LENGTH_LONG).show()
+                    }
+
+                    override fun onFailure(call: Call<Hangman>, t: Throwable) {
+
+                    }
+                })
             }
 
             override fun onFailure(call: Call<Hangman>, t: Throwable) {
@@ -146,18 +160,19 @@ class GameActivity : AppCompatActivity() {
     }
 
 
-    fun ValidateKey()
-    {
+    fun ValidateKey() {
         //TODO (Needs implementation)
     }
 
-    fun UpdateCharacter()
-    {
+    fun UpdateCharacter() {
         //TODO (Needs implementation)
     }
 
-    fun Timer()
-    {
+    fun Timer() {
         //TODO (Needs implementation)
     }
+}
+
+private fun <T> Call<T>?.enqueue(callback: Callback<Hangman>) {
+
 }
