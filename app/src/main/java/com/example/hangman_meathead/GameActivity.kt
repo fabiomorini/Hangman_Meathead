@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.PorterDuff
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.hangman_meathead.databinding.ActivityGameBinding
@@ -23,8 +24,8 @@ class GameActivity : AppCompatActivity() {
 
     private lateinit var services: HangmanAPI
     private var hangmanGame: Hangman? = null
-    private var incorrectGuesses = 0
-    private var incorrectGuessesCounter = 0
+    private var incorrectAttempts = 0
+    private var maxAttempts = 5
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,166 +47,112 @@ class GameActivity : AppCompatActivity() {
         }
 
         //region Letters
-        binding.aButton.setOnClickListener(){
-            sendLetter("a")
-//            if(validateKey()) binding.aButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
-//            else binding.aButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
+        binding.aButton.setOnClickListener() {
+            sendLetter("a", binding.aButton)
         }
 
-        binding.bButton.setOnClickListener(){
-            sendLetter("b")
-//            if(validateKey()) binding.bButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
-//            else binding.bButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
+        binding.bButton.setOnClickListener() {
+            sendLetter("b", binding.bButton)
         }
 
-        binding.cButton.setOnClickListener(){
-            sendLetter("c")
-//            if(validateKey()) binding.cButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
-//            else binding.cButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
+        binding.cButton.setOnClickListener() {
+            sendLetter("c", binding.cButton)
         }
 
-        binding.dButton.setOnClickListener(){
-            sendLetter("d")
-//            if(validateKey()) binding.dButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
-//            else binding.dButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
+        binding.dButton.setOnClickListener() {
+            sendLetter("d", binding.dButton)
         }
 
-        binding.eButton.setOnClickListener(){
-            sendLetter("e")
-//            if(validateKey()) binding.eButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
-//            else binding.eButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
+        binding.eButton.setOnClickListener() {
+            sendLetter("e", binding.eButton)
         }
 
-        binding.fButton.setOnClickListener(){
-            sendLetter("f")
-//            if(validateKey()) binding.fButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
-//            else binding.fButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
+        binding.fButton.setOnClickListener() {
+            sendLetter("f", binding.fButton)
         }
 
-        binding.gButton.setOnClickListener(){
-            sendLetter("g")
-//            if(validateKey()) binding.gButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
-//            else binding.gButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
+        binding.gButton.setOnClickListener() {
+            sendLetter("g", binding.gButton)
         }
 
-        binding.hButton.setOnClickListener(){
-            sendLetter("h")
-//            if(validateKey()) binding.hButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
-//            else binding.hButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
+        binding.hButton.setOnClickListener() {
+            sendLetter("h", binding.hButton)
         }
 
-        binding.iButton.setOnClickListener(){
-            sendLetter("i")
-//            if(validateKey()) binding.iButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
-//            else binding.iButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
+        binding.iButton.setOnClickListener() {
+            sendLetter("i", binding.iButton)
         }
 
-        binding.jButton.setOnClickListener(){
-            sendLetter("j")
-//            if(validateKey()) binding.jButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
-//            else binding.jButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
+        binding.jButton.setOnClickListener() {
+            sendLetter("j", binding.jButton)
         }
 
-        binding.kButton.setOnClickListener(){
-            sendLetter("k")
-//            if(validateKey()) binding.kButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
-//            else binding.kButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
+        binding.kButton.setOnClickListener() {
+            sendLetter("k", binding.kButton)
         }
 
-        binding.lButton.setOnClickListener(){
-            sendLetter("l")
-//            if(validateKey()) binding.lButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
-//            else binding.lButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
+        binding.lButton.setOnClickListener() {
+            sendLetter("l", binding.lButton)
         }
 
-        binding.mButton.setOnClickListener(){
-            sendLetter("m")
-//            if(validateKey()) binding.mButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
-//            else binding.mButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
+        binding.mButton.setOnClickListener() {
+            sendLetter("m", binding.mButton)
         }
 
-        binding.nButton.setOnClickListener(){
-            sendLetter("n")
-//            if(validateKey()) binding.nButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
-//            else binding.nButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
+        binding.nButton.setOnClickListener() {
+            sendLetter("n", binding.nButton)
         }
 
-        binding.nnButton.setOnClickListener(){
-            sendLetter("ñ")
-//            if(validateKey()) binding.nnButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
-//            else binding.nnButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
+        binding.nnButton.setOnClickListener() {
+            sendLetter("ñ", binding.nnButton)
         }
 
-        binding.oButton.setOnClickListener(){
-            sendLetter("o")
-//            if(validateKey()) binding.oButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
-//            else binding.oButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
+        binding.oButton.setOnClickListener() {
+            sendLetter("o", binding.oButton)
         }
 
-        binding.pButton.setOnClickListener(){
-            sendLetter("p")
-//            if(validateKey()) binding.pButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
-//            else binding.pButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
+        binding.pButton.setOnClickListener() {
+            sendLetter("p", binding.pButton)
         }
 
-        binding.qButton.setOnClickListener(){
-            sendLetter("q")
-//            if(validateKey()) binding.qButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
-//            else binding.qButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
+        binding.qButton.setOnClickListener() {
+            sendLetter("q", binding.qButton)
         }
 
-        binding.rButton.setOnClickListener(){
-            sendLetter("r")
-//            if(validateKey()) binding.rButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
-//            else binding.rButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
+        binding.rButton.setOnClickListener() {
+            sendLetter("r", binding.rButton)
         }
 
-        binding.sButton.setOnClickListener(){
-            sendLetter("s")
-//            if(validateKey()) binding.sButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
-//            else binding.sButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
+        binding.sButton.setOnClickListener() {
+            sendLetter("s", binding.sButton)
         }
 
-        binding.tButton.setOnClickListener(){
-            sendLetter("t")
-//            if(validateKey()) binding.tButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
-//            else binding.tButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
+        binding.tButton.setOnClickListener() {
+            sendLetter("t", binding.tButton)
         }
 
-        binding.uButton.setOnClickListener(){
-            sendLetter("u")
-//            if(validateKey()) binding.uButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
-//            else binding.uButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
+        binding.uButton.setOnClickListener() {
+            sendLetter("u", binding.uButton)
         }
 
-        binding.vButton.setOnClickListener(){
-            sendLetter("v")
-//            if(validateKey()) binding.vButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
-//            else binding.vButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
+        binding.vButton.setOnClickListener() {
+            sendLetter("v", binding.vButton)
         }
 
-        binding.wButton.setOnClickListener(){
-            sendLetter("w")
-//            if(validateKey()) binding.wButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
-//            else binding.wButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
+        binding.wButton.setOnClickListener() {
+            sendLetter("w", binding.wButton)
         }
 
-        binding.xButton.setOnClickListener(){
-            sendLetter("x")
-//            if(validateKey()) binding.xButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
-//            else binding.xButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
+        binding.xButton.setOnClickListener() {
+            sendLetter("x", binding.xButton)
         }
 
-        binding.yButton.setOnClickListener(){
-            sendLetter("y")
-//            if(validateKey()) binding.yButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
-//            else binding.yButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
+        binding.yButton.setOnClickListener() {
+            sendLetter("y", binding.yButton)
         }
 
-        binding.zButton.setOnClickListener(){
-            sendLetter("z")
-//            if(validateKey()) binding.zButton.setColorFilter(0xFF00FF00.toInt(), PorterDuff.Mode.ADD)
-//            else binding.zButton.setColorFilter(0xFFFF0000.toInt(), PorterDuff.Mode.ADD)
+        binding.zButton.setOnClickListener() {
+            sendLetter("z", binding.zButton)
         }
         //endregion Letters
         //endregion Game
@@ -327,7 +274,7 @@ class GameActivity : AppCompatActivity() {
         })
     }
 
-    private fun sendLetter(letter: String) {
+    private fun sendLetter(letter: String, imageButton: ImageButton) {
         // hace la llamada a sendLetter aquí
         hangmanGame?.let {
             services.sendLetter(it.token, letter).enqueue(object : Callback<Hangman> {
@@ -336,15 +283,7 @@ class GameActivity : AppCompatActivity() {
                         override fun onResponse(call: Call<Hangman>, response: Response<Hangman>) {
                             // procesa la respuesta aquí
                             hangmanGame = response.body()
-                            var letterData = response.body()
-                            if (letterData?.incorrectGuesses != null) {
-                                incorrectGuesses = letterData!!.incorrectGuesses.toInt()
-                                if (incorrectGuesses >= 5) {
-                                    binding.hangmanText.text = hangmanGame?.solution ?: "404: Not found"
-                                    binding.hangmanText.setTextColor(0xFFFF0000.toInt())
-                                }
-                                else binding.hangmanText.text = hangmanGame?.hangman ?: "404: Not found"
-                            }
+                            validateKey(response.body(), imageButton)
                         }
 
                         override fun onFailure(call: Call<Hangman>, t: Throwable) {
@@ -360,8 +299,33 @@ class GameActivity : AppCompatActivity() {
         }
     }
 
-    private fun validateKey() {
+    private fun validateKey(response: Hangman?, imageButton: ImageButton) {
+        if (response != null) {
+            if (incorrectAttempts < response.incorrectGuesses.toInt()) {
+                imageButton.setColorFilter(
+                    0xFFFF0000.toInt(),
+                    PorterDuff.Mode.ADD
+                )
+                incorrectAttempts = response.incorrectGuesses.toInt()
 
+                if (incorrectAttempts >= maxAttempts) {
+                    //Popup de si quieres continuar viendo publicidad. Si acepta, maxTry++, si no
+                    //muestra pantalla de "has perdido" con la palabra correcta
+
+                } else binding.hangmanText.text =
+                    hangmanGame?.hangman ?: "404: Not found"
+            } else imageButton.setColorFilter(
+                0xFF00FF00.toInt(),
+                PorterDuff.Mode.ADD
+            )
+            binding.hangmanText.text =
+                hangmanGame?.hangman ?: "404: Not found"
+
+            if(hangmanGame?.hangman ?: "404: Not found" == hangmanGame?.solution ?: "404: Not found"){
+                //Muestra pantalla de victoria con la palabra correcta
+            }
+        } else binding.hangmanText.text =
+            hangmanGame?.solution ?: "404: Not found"
     }
 
     fun UpdateCharacter() {
