@@ -1,11 +1,9 @@
-package com.example.hangman_meathead
+package com.example.hangman_meathead.scores
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
+import com.example.hangman_meathead.MainMenuActivity
 import com.example.hangman_meathead.databinding.ActivityLeaderboardBinding
 
 class LeaderboardActivity : AppCompatActivity() {

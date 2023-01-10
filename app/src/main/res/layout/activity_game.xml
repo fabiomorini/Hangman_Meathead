@@ -19,10 +19,9 @@
         app:srcCompat="@drawable/asset_2" />
 
     <ImageView
-        android:id="@+id/charImageView"
+        android:id="@+id/playerMeathead"
         android:layout_width="282dp"
         android:layout_height="397dp"
-        android:layout_marginStart="-32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -50,7 +49,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/backgroundImageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/charImageView"
+        app:layout_constraintTop_toBottomOf="@+id/playerMeathead"
         app:srcCompat="@drawable/asset_4" />
 
     <TextView
@@ -271,7 +270,7 @@
         tools:srcCompat="@drawable/n_button" />
 
     <ImageButton
-        android:id="@+id/ñButton"
+        android:id="@+id/nnButton"
         android:layout_width="52dp"
         android:layout_height="52dp"
         android:backgroundTint="#00FFFFFF"
@@ -292,7 +291,7 @@
         android:scaleType="centerCrop"
         android:scaleX="1.4"
         android:scaleY="1.4"
-        app:layout_constraintStart_toEndOf="@+id/ñButton"
+        app:layout_constraintStart_toEndOf="@+id/nnButton"
         app:layout_constraintTop_toBottomOf="@+id/hButton"
         app:layout_wrapBehaviorInParent="horizontal_only"
         app:srcCompat="@drawable/o_button"
@@ -471,8 +470,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="visible">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -682,7 +680,7 @@
                 app:srcCompat="@drawable/hintstext" />
 
             <Switch
-                android:id="@+id/switch3"
+                android:id="@+id/hintsSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"

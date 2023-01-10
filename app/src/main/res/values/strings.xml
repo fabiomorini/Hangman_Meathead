@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">Hangman_Meathead</string>
+    <string name="app_name" lang="en">Hangman_Meathead</string>
+    <string name="email_format_error" lang="es">Formato de email incorrecto!</string>
+    <string name="login_error" lang="es">No se reconoce el usuario o contraseña introducidos!</string>
+    <string name="unknown_error" lang="es">Ha ocurrido un problema, vuelve a intentarlo de nuevo más tarde</string>
+    <string name="function_unimplemented" lang="en">Under construction!</string>
+    <string name="word_not_found" lang="en">Hangman_Meathead</string>
+    <string name="yes" lang="en">Yes</string>
+    <string name="more_tries_question" lang="en">Do you want to try again after seeing an ad?</string>
+    <string name="no" lang="en">no</string>
+    <string name="would_you_like_to_play_again" lang="en">Would you like to play again?</string>
 </resources>

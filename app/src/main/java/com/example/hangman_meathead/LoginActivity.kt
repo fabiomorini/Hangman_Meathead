@@ -9,6 +9,7 @@ import android.widget.Toast
 import com.example.hangman_meathead.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 
+
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var firebaseAuth: FirebaseAuth
@@ -19,25 +20,7 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this)
-        val editor = sharedPrefs.edit()
-        val loadedEmail = sharedPrefs.getString("email", null)
-        val loadedPassword = sharedPrefs.getString("password", null)
-
         firebaseAuth = FirebaseAuth.getInstance()
-
-        if(loadedEmail != null && loadedPassword != null){
-            firebaseAuth.signInWithEmailAndPassword(loadedEmail, loadedPassword)
-            .addOnSuccessListener {
-                val intentMain = Intent(this@LoginActivity, MainMenuActivity::class.java)
-                startActivity(intentMain)
-
-                finish()
-
-            }.addOnFailureListener {
-                Toast.makeText(this, "Login incorrecto!", Toast.LENGTH_LONG).show()
-            }
-        }
 
         binding.loginButton.setOnClickListener {
             val email = binding.inputMail.text.toString()
@@ -48,23 +31,22 @@ class LoginActivity : AppCompatActivity() {
                 val intentMain = Intent(this@LoginActivity, MainMenuActivity::class.java)
                 startActivity(intentMain)
 
-                editor.putString("email", binding.inputMail.text.toString())
-                editor.putString("password", binding.inputPassword.text.toString())
-                editor.apply()
+                PreferencesManager.setEmail(binding.inputMail.text.toString())
+                PreferencesManager.setPassword(binding.inputPassword.text.toString())
 
                 finish()
 
             }.addOnFailureListener {
-                Toast.makeText(this, "Login incorrecto!", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, R.string.login_error, Toast.LENGTH_LONG).show()
             }
         }
 
-        binding.inputMail.setOnFocusChangeListener { view, hasFocus ->
+        binding.inputMail.setOnFocusChangeListener { _, hasFocus ->
 
             if (!hasFocus) {
                 val mail = binding.inputMail.text.toString()
                 if (!Patterns.EMAIL_ADDRESS.matcher(mail).matches()) {
-                    binding.inputMail.error = "Formato de email incorrecto!"
+                    binding.inputMail.error = R.string.email_format_error.toString()
                 } else {
                     binding.inputMail.error = null
                 }
@@ -72,7 +54,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.forgotPasswordButton.setOnClickListener{
-            Toast.makeText(this, "Under construction!", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, R.string.function_unimplemented, Toast.LENGTH_LONG).show()
         }
 
         binding.signUpButton.setOnClickListener{

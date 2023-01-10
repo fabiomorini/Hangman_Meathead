@@ -4,17 +4,26 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!--Permisos para la notificación-->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hangman_Meathead"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-7309454159717713~1228422816"/>
+
         <activity
             android:name=".MainMenuActivity"
             android:exported="false">
@@ -23,7 +32,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".LeaderboardActivity"
+            android:name=".scores.LeaderboardActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -56,9 +65,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".QuotesActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="false">
             <meta-data
@@ -72,6 +78,19 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-    </application>
 
+        <service
+            android:name=".ConnectionCheckService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <receiver
+            android:name=".MyBroadcastReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+    </application>
 </manifest>
