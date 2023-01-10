@@ -7,8 +7,10 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.graphics.drawable.toDrawable
 import com.example.hangman_meathead.databinding.ActivityGameBinding
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.admanager.AdManagerAdRequest
@@ -348,6 +350,7 @@ class GameActivity : AppCompatActivity() {
                     // maneja el error aquí
                 }
             })
+            UpdateCharacter()
         }
     }
 
@@ -383,7 +386,31 @@ class GameActivity : AppCompatActivity() {
     }
 
     fun UpdateCharacter() {
-        //TODO (Needs implementation)
+        if (incorrectAttempts == 0)
+        {
+            binding.playerMeathead.setImageResource(R.drawable.hangman)
+        }
+        else if (incorrectAttempts == 1)
+        {
+            binding.playerMeathead.setImageResource(R.drawable.brochetas4)
+        }
+        else if (incorrectAttempts == 2)
+        {
+
+            binding.playerMeathead.setImageResource(R.drawable.brochetas3)
+        }
+        else if (incorrectAttempts == 3)
+        {
+            binding.playerMeathead.setImageResource(R.drawable.brochetas2)
+        }
+        else if (incorrectAttempts == 4)
+        {
+            binding.playerMeathead.setImageResource(R.drawable.brochetas1)
+        }
+        else if (incorrectAttempts >= 5)
+        {
+            binding.playerMeathead.setImageResource(R.drawable.brochetas0)
+        }
     }
 
     fun Timer() {
@@ -417,7 +444,7 @@ class GameActivity : AppCompatActivity() {
             if (mRewardedAd != null) {
                 mRewardedAd?.show(this, OnUserEarnedRewardListener() {
                         fun onUserEarnedReward() {
-                            maxAttempts++
+                            incorrectAttempts--
                     }
                 })
             } else {

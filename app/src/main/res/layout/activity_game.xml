@@ -19,7 +19,7 @@
         app:srcCompat="@drawable/asset_2" />
 
     <ImageView
-        android:id="@+id/charImageView"
+        android:id="@+id/playerMeathead"
         android:layout_width="282dp"
         android:layout_height="397dp"
         android:layout_marginStart="-32dp"
@@ -50,7 +50,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/backgroundImageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/charImageView"
+        app:layout_constraintTop_toBottomOf="@+id/playerMeathead"
         app:srcCompat="@drawable/asset_4" />
 
     <TextView
