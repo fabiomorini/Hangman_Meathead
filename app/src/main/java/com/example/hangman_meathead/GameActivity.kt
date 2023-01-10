@@ -352,5 +352,7 @@ class GameActivity : AppCompatActivity() {
         dialog.setNegativeButton(R.string.no){ _, _ ->
             //Mostrar pantalla de "you lose"
         }
+        val alertDialog: AlertDialog = dialog.create()
+        alertDialog.show()
     }
 }

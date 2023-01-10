@@ -49,19 +49,19 @@ class MainMenuActivity : AppCompatActivity() {
             }
         }
 
-        // Ahora que ya tenemos disponible la última fecha de acceso del usuario a la app
-        // Programa el servicio para que se ejecute cada 24 horas, desde aquí
-        val alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        val intent = Intent(this, ConnectionCheckService::class.java)
-        val pendingIntent = PendingIntent.getService(this, 0, intent, 0)
-        val interval: Long = 24 * 60 * 60 * 1000 // 24 horas en milisegundos
-        alarmManager.setInexactRepeating(
-            AlarmManager.ELAPSED_REALTIME_WAKEUP,
-            interval,
-            interval,
-            pendingIntent
-        )
-        //Hasta aquí
+//        // Ahora que ya tenemos disponible la última fecha de acceso del usuario a la app
+//        // Programa el servicio para que se ejecute cada 24 horas, desde aquí
+//        val alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
+//        val intent = Intent(this, ConnectionCheckService::class.java)
+//        val pendingIntent = PendingIntent.getService(this, 0, intent, 0)
+//        val interval: Long = 24 * 60 * 60 * 1000 // 24 horas en milisegundos
+//        alarmManager.setInexactRepeating(
+//            AlarmManager.ELAPSED_REALTIME_WAKEUP,
+//            interval,
+//            interval,
+//            pendingIntent
+//        )
+//        //Hasta aquí
 
         binding.audioSwitch.isChecked = PreferencesManager.isSoundActive()
         binding.notificationsSwitch.isChecked = PreferencesManager.isNotificationsActive()
