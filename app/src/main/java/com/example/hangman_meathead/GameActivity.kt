@@ -421,7 +421,9 @@ class GameActivity : AppCompatActivity() {
 
     private fun showPlayAgainDialog(){
         val dialog = AlertDialog.Builder(this)
-        dialog.setTitle(R.string.would_you_like_to_play_again)
+        val playAgainString = resources.getString(R.string.would_you_like_to_play_again)
+        dialog.setTitle("The correct word is: " + (hangmanGame?.solution
+            ?: R.string.word_not_found).toString() + "\n" + playAgainString)
         dialog.setPositiveButton(R.string.yes) { _, _ ->
             val intentMain = Intent(this@GameActivity, GameActivity::class.java)
             startActivity(intentMain)
