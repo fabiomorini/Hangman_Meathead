@@ -15,6 +15,10 @@
         android:theme="@style/Theme.Hangman_Meathead"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-7309454159717713~1228422816"/>
+
         <activity
             android:name=".MainMenuActivity"
             android:exported="false">
