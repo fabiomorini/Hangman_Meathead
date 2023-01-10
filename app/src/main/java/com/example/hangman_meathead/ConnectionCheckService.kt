@@ -86,7 +86,7 @@ class ConnectionCheckService : Service() {
         // Create the notification
         val notificationBuilder = NotificationCompat.Builder(this, "channel_id")
             .setContentTitle("MeatHead")
-            .setSmallIcon(R.drawable.asset_45)
+            .setSmallIcon(R.drawable.icon)
             .setContentText("¿Echas de menos los retos de nuestro juego? ¡Ven y demuestra que tu cerebro no es solo decorativo!")
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             .setAutoCancel(true)

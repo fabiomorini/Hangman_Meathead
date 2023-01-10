@@ -59,7 +59,7 @@ class GameActivity : AppCompatActivity() {
         MobileAds.initialize(this) {}
 
         var adRequest = AdRequest.Builder().build()
-        RewardedAd.load(this,"ca-app-pub-3940256099942544/5224354917", adRequest, object : RewardedAdLoadCallback() {
+        RewardedAd.load(this,"ca-app-pub-7309454159717713/2408824306", adRequest, object : RewardedAdLoadCallback() {
             override fun onAdFailedToLoad(adError: LoadAdError) {
                 mRewardedAd = null
             }
