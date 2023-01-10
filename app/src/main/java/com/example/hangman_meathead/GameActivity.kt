@@ -448,7 +448,6 @@ class GameActivity : AppCompatActivity() {
             if (mRewardedAd != null) {
                 mRewardedAd?.show(this, OnUserEarnedRewardListener() {
                         fun onUserEarnedReward() {
-                            incorrectAttempts--
                     }
                 })
             } else {

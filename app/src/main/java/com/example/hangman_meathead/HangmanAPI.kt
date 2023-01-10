@@ -8,7 +8,7 @@ import retrofit2.http.Query
 
 interface HangmanAPI {
 
-    @GET("new?lang=es&maxTries=5")
+    @GET("new?lang=es&maxTries=28")
     fun getRandomHangman(): Call<Hangman>
 
     @GET("game")
