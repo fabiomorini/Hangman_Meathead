@@ -36,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
                 finish()
 
             }.addOnFailureListener {
-                Toast.makeText(this, "Login incorrecto!", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, R.string.login_error, Toast.LENGTH_LONG).show()
             }
         }
 
@@ -45,7 +45,7 @@ class LoginActivity : AppCompatActivity() {
             if (!hasFocus) {
                 val mail = binding.inputMail.text.toString()
                 if (!Patterns.EMAIL_ADDRESS.matcher(mail).matches()) {
-                    binding.inputMail.error = "Formato de email incorrecto!"
+                    binding.inputMail.error = R.string.email_format_error.toString()
                 } else {
                     binding.inputMail.error = null
                 }
@@ -53,7 +53,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.forgotPasswordButton.setOnClickListener{
-            Toast.makeText(this, "Under construction!", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, R.string.function_unimplemented, Toast.LENGTH_LONG).show()
         }
 
         binding.signUpButton.setOnClickListener{

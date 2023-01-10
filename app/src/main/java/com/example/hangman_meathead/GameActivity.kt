@@ -1,5 +1,6 @@
 package com.example.hangman_meathead
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.graphics.PorterDuff
 import android.os.Bundle
@@ -18,6 +19,10 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class GameActivity : AppCompatActivity() {
+    companion object {
+        const val PREFERENCES_COLLECTION = "user_preferences"
+    }
+
     private lateinit var binding: ActivityGameBinding
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var db: FirebaseFirestore
@@ -207,10 +212,10 @@ class GameActivity : AppCompatActivity() {
         binding.hintsSwitch.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 binding.hintsSwitch.isChecked = false
-                Toast.makeText(this, "Under construction!", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, R.string.function_unimplemented, Toast.LENGTH_LONG).show()
             } else {
                 binding.hintsSwitch.isChecked = false
-                Toast.makeText(this, "Under construction!", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, R.string.function_unimplemented, Toast.LENGTH_LONG).show()
             }
         }
 
@@ -226,7 +231,7 @@ class GameActivity : AppCompatActivity() {
         val dbUser = FirebaseAuth.getInstance().currentUser
         val dbUID = dbUser?.uid.toString()
 
-        val userPreferencesRef = db.collection("user_preferences").document(dbUID)
+        val userPreferencesRef = db.collection(PREFERENCES_COLLECTION).document(dbUID)
 
         val data = hashMapOf(
             "username" to PreferencesManager.getUsername(),
@@ -252,7 +257,7 @@ class GameActivity : AppCompatActivity() {
 
             override fun onResponse(call: Call<Hangman>, response: Response<Hangman>) {
                 hangmanGame = response.body()
-                binding.hangmanText.text = hangmanGame?.hangman ?: "404: Not found"
+                binding.hangmanText.text = (hangmanGame?.hangman ?: R.string.word_not_found).toString()
 
                 hangmanGame?.let {
                     services.getHangmanGame(it.token).enqueue(object : Callback<Hangman> {
@@ -309,23 +314,24 @@ class GameActivity : AppCompatActivity() {
                 incorrectAttempts = response.incorrectGuesses.toInt()
 
                 if (incorrectAttempts >= maxAttempts) {
-                    //Popup de si quieres continuar viendo publicidad. Si acepta, maxTry++, si no
-                    //muestra pantalla de "has perdido" con la palabra correcta
+                    showMoreTriesDialog()
 
                 } else binding.hangmanText.text =
-                    hangmanGame?.hangman ?: "404: Not found"
+                    (hangmanGame?.hangman ?: R.string.word_not_found).toString()
             } else imageButton.setColorFilter(
                 0xFF00FF00.toInt(),
                 PorterDuff.Mode.ADD
             )
             binding.hangmanText.text =
-                hangmanGame?.hangman ?: "404: Not found"
+                (hangmanGame?.hangman ?: R.string.word_not_found).toString()
 
-            if(hangmanGame?.hangman ?: "404: Not found" == hangmanGame?.solution ?: "404: Not found"){
+            if((hangmanGame?.hangman ?: R.string.word_not_found) == (hangmanGame?.solution
+                    ?: R.string.word_not_found)
+            ){
                 //Muestra pantalla de victoria con la palabra correcta
             }
         } else binding.hangmanText.text =
-            hangmanGame?.solution ?: "404: Not found"
+            (hangmanGame?.solution ?: R.string.word_not_found).toString()
     }
 
     fun UpdateCharacter() {
@@ -335,8 +341,16 @@ class GameActivity : AppCompatActivity() {
     fun Timer() {
         //TODO (Needs implementation)
     }
-}
 
-private fun <T> Call<T>?.enqueue(callback: Callback<Hangman>) {
-
+    private fun showMoreTriesDialog(){
+        val dialog = AlertDialog.Builder(this)
+        dialog.setTitle(R.string.more_tries_question)
+        dialog.setPositiveButton(R.string.yes) { _, _ ->
+            //Mostrar anuncio
+            maxAttempts++
+        }
+        dialog.setNegativeButton(R.string.no){ _, _ ->
+            //Mostrar pantalla de "you lose"
+        }
+    }
 }

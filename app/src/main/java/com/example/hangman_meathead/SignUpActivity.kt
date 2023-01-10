@@ -11,10 +11,13 @@ import com.google.firebase.firestore.FirebaseFirestore
 import java.util.*
 
 class SignUpActivity : AppCompatActivity() {
+    companion object {
+        const val PREFERENCES_COLLECTION = "user_preferences"
+    }
+
     private lateinit var binding: ActivitySignUpBinding
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var db: FirebaseFirestore
-    val PREFERENCES_COLLECTION = "user_preferences"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,7 +49,7 @@ class SignUpActivity : AppCompatActivity() {
                     val dbUser = FirebaseAuth.getInstance().currentUser
                     val dbUID = dbUser?.uid.toString()
 
-                    val userPreferencesRef = db.collection("user_preferences").document(dbUID)
+                    val userPreferencesRef = db.collection(PREFERENCES_COLLECTION).document(dbUID)
 
                     val data = hashMapOf(
                         "username" to PreferencesManager.getUsername(),
@@ -68,7 +71,7 @@ class SignUpActivity : AppCompatActivity() {
                     finish()
 
                 }.addOnFailureListener {
-                    Toast.makeText(this, "Ha ocurrido un problema!", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, R.string.unknown_error, Toast.LENGTH_LONG).show()
                 }
         }
 
@@ -77,7 +80,7 @@ class SignUpActivity : AppCompatActivity() {
             if (!hasFocus) {
                 val mail = binding.inputSignUpMail.text.toString()
                 if (!Patterns.EMAIL_ADDRESS.matcher(mail).matches()) {
-                    binding.inputSignUpMail.error = "Formato de email incorrecto!"
+                    binding.inputSignUpMail.error = R.string.email_format_error.toString()
                 } else {
                     binding.inputSignUpMail.error = null
                 }
@@ -92,7 +95,7 @@ class SignUpActivity : AppCompatActivity() {
         }
 
         binding.countryButton.setOnClickListener {
-            Toast.makeText(this, "Under construction!", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, R.string.function_unimplemented, Toast.LENGTH_LONG).show()
         }
     }
 }
