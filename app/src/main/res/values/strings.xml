@@ -8,4 +8,5 @@
     <string name="yes" lang="en">Yes</string>
     <string name="more_tries_question" lang="en">Do you want to try again after seeing an ad?</string>
     <string name="no" lang="en">no</string>
+    <string name="would_you_like_to_play_again" lang="en">Would you like to play again?</string>
 </resources>

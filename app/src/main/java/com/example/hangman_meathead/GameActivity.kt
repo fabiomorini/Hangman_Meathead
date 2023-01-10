@@ -376,6 +376,7 @@ class GameActivity : AppCompatActivity() {
                     ?: R.string.word_not_found)
             ){
                 //Muestra pantalla de victoria con la palabra correcta
+                showPlayAgainDialog()
             }
         } else binding.hangmanText.text =
             (hangmanGame?.solution ?: R.string.word_not_found).toString()
@@ -389,7 +390,24 @@ class GameActivity : AppCompatActivity() {
         //TODO (Needs implementation)
     }
 
+    private fun showPlayAgainDialog(){
+        val dialog = AlertDialog.Builder(this)
+        dialog.setTitle(R.string.would_you_like_to_play_again)
+        dialog.setPositiveButton(R.string.yes) { _, _ ->
+            val intentMain = Intent(this@GameActivity, GameActivity::class.java)
+            startActivity(intentMain)
 
+            finish()
+        }
+        dialog.setNegativeButton(R.string.no){ _, _ ->
+            val intentMain = Intent(this@GameActivity, MainMenuActivity::class.java)
+            startActivity(intentMain)
+
+            finish()
+        }
+        val alertDialog: AlertDialog = dialog.create()
+        alertDialog.show()
+    }
 
     private fun showMoreTriesDialog(){
         val dialog = AlertDialog.Builder(this)
@@ -407,6 +425,7 @@ class GameActivity : AppCompatActivity() {
         }
         dialog.setNegativeButton(R.string.no){ _, _ ->
             //Mostrar pantalla de "you lose"
+            showPlayAgainDialog()
         }
         val alertDialog: AlertDialog = dialog.create()
         alertDialog.show()
