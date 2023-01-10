@@ -338,6 +338,7 @@ class GameActivity : AppCompatActivity() {
                             // procesa la respuesta aquí
                             hangmanGame = response.body()
                             validateKey(response.body(), imageButton)
+                            UpdateCharacter()
                         }
 
                         override fun onFailure(call: Call<Hangman>, t: Throwable) {
@@ -350,7 +351,7 @@ class GameActivity : AppCompatActivity() {
                     // maneja el error aquí
                 }
             })
-            UpdateCharacter()
+
         }
     }
 
@@ -392,24 +393,24 @@ class GameActivity : AppCompatActivity() {
         }
         else if (incorrectAttempts == 1)
         {
-            binding.playerMeathead.setImageResource(R.drawable.brochetas4)
+            binding.playerMeathead.setImageResource(R.drawable.brocheta4)
         }
         else if (incorrectAttempts == 2)
         {
 
-            binding.playerMeathead.setImageResource(R.drawable.brochetas3)
+            binding.playerMeathead.setImageResource(R.drawable.brocheta3)
         }
         else if (incorrectAttempts == 3)
         {
-            binding.playerMeathead.setImageResource(R.drawable.brochetas2)
+            binding.playerMeathead.setImageResource(R.drawable.brocheta2)
         }
         else if (incorrectAttempts == 4)
         {
-            binding.playerMeathead.setImageResource(R.drawable.brochetas1)
+            binding.playerMeathead.setImageResource(R.drawable.brocheta1)
         }
         else if (incorrectAttempts >= 5)
         {
-            binding.playerMeathead.setImageResource(R.drawable.brochetas0)
+            binding.playerMeathead.setImageResource(R.drawable.brocheta0)
         }
     }
 
