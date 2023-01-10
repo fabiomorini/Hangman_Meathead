@@ -1,19 +1,31 @@
 package com.example.hangman_meathead
 
 import android.content.Intent
+import android.graphics.PorterDuff
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.hangman_meathead.databinding.ActivityGameBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class GameActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGameBinding
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var db: FirebaseFirestore
+
+    private lateinit var services: HangmanAPI
+    private var hangmanGame: Hangman? = null
+    private var incorrectAttempts = 0
+    private var maxAttempts = 5
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,9 +40,121 @@ class GameActivity : AppCompatActivity() {
         binding.notificationsSwitch.isChecked = PreferencesManager.isNotificationsActive()
 
         //region Game
+        nextHangman()
+
         binding.pauseButton.setOnClickListener {
             binding.pauseMenu.visibility = View.VISIBLE
         }
+
+        //region Letters
+        binding.aButton.setOnClickListener() {
+            sendLetter("a", binding.aButton)
+        }
+
+        binding.bButton.setOnClickListener() {
+            sendLetter("b", binding.bButton)
+        }
+
+        binding.cButton.setOnClickListener() {
+            sendLetter("c", binding.cButton)
+        }
+
+        binding.dButton.setOnClickListener() {
+            sendLetter("d", binding.dButton)
+        }
+
+        binding.eButton.setOnClickListener() {
+            sendLetter("e", binding.eButton)
+        }
+
+        binding.fButton.setOnClickListener() {
+            sendLetter("f", binding.fButton)
+        }
+
+        binding.gButton.setOnClickListener() {
+            sendLetter("g", binding.gButton)
+        }
+
+        binding.hButton.setOnClickListener() {
+            sendLetter("h", binding.hButton)
+        }
+
+        binding.iButton.setOnClickListener() {
+            sendLetter("i", binding.iButton)
+        }
+
+        binding.jButton.setOnClickListener() {
+            sendLetter("j", binding.jButton)
+        }
+
+        binding.kButton.setOnClickListener() {
+            sendLetter("k", binding.kButton)
+        }
+
+        binding.lButton.setOnClickListener() {
+            sendLetter("l", binding.lButton)
+        }
+
+        binding.mButton.setOnClickListener() {
+            sendLetter("m", binding.mButton)
+        }
+
+        binding.nButton.setOnClickListener() {
+            sendLetter("n", binding.nButton)
+        }
+
+        binding.nnButton.setOnClickListener() {
+            sendLetter("ñ", binding.nnButton)
+        }
+
+        binding.oButton.setOnClickListener() {
+            sendLetter("o", binding.oButton)
+        }
+
+        binding.pButton.setOnClickListener() {
+            sendLetter("p", binding.pButton)
+        }
+
+        binding.qButton.setOnClickListener() {
+            sendLetter("q", binding.qButton)
+        }
+
+        binding.rButton.setOnClickListener() {
+            sendLetter("r", binding.rButton)
+        }
+
+        binding.sButton.setOnClickListener() {
+            sendLetter("s", binding.sButton)
+        }
+
+        binding.tButton.setOnClickListener() {
+            sendLetter("t", binding.tButton)
+        }
+
+        binding.uButton.setOnClickListener() {
+            sendLetter("u", binding.uButton)
+        }
+
+        binding.vButton.setOnClickListener() {
+            sendLetter("v", binding.vButton)
+        }
+
+        binding.wButton.setOnClickListener() {
+            sendLetter("w", binding.wButton)
+        }
+
+        binding.xButton.setOnClickListener() {
+            sendLetter("x", binding.xButton)
+        }
+
+        binding.yButton.setOnClickListener() {
+            sendLetter("y", binding.yButton)
+        }
+
+        binding.zButton.setOnClickListener() {
+            sendLetter("z", binding.zButton)
+        }
+        //endregion Letters
         //endregion Game
 
         //region Pause
@@ -117,8 +241,91 @@ class GameActivity : AppCompatActivity() {
         super.onPause()
     }
 
-    fun ValidateKey() {
-        //TODO (Needs implementation)
+    private fun nextHangman() {
+        val outside = Retrofit.Builder()
+            .baseUrl("http://hangman.enti.cat:5002/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        services = outside.create(HangmanAPI::class.java)
+        services.getRandomHangman().enqueue(object : Callback<Hangman> {
+
+            override fun onResponse(call: Call<Hangman>, response: Response<Hangman>) {
+                hangmanGame = response.body()
+                binding.hangmanText.text = hangmanGame?.hangman ?: "404: Not found"
+
+                hangmanGame?.let {
+                    services.getHangmanGame(it.token).enqueue(object : Callback<Hangman> {
+                        override fun onResponse(call: Call<Hangman>, response: Response<Hangman>) {
+                            // procesa la respuesta aquí
+                            hangmanGame = response.body()
+                        }
+
+                        override fun onFailure(call: Call<Hangman>, t: Throwable) {
+                            // maneja el error aquí
+                        }
+                    })
+                }
+            }
+
+            override fun onFailure(call: Call<Hangman>, t: Throwable) {
+
+            }
+        })
+    }
+
+    private fun sendLetter(letter: String, imageButton: ImageButton) {
+        // hace la llamada a sendLetter aquí
+        hangmanGame?.let {
+            services.sendLetter(it.token, letter).enqueue(object : Callback<Hangman> {
+                override fun onResponse(call: Call<Hangman>, response: Response<Hangman>) {
+                    services.getHangmanGame(it.token).enqueue(object : Callback<Hangman> {
+                        override fun onResponse(call: Call<Hangman>, response: Response<Hangman>) {
+                            // procesa la respuesta aquí
+                            hangmanGame = response.body()
+                            validateKey(response.body(), imageButton)
+                        }
+
+                        override fun onFailure(call: Call<Hangman>, t: Throwable) {
+                            // maneja el error aquí
+                        }
+                    })
+                }
+
+                override fun onFailure(call: Call<Hangman>, t: Throwable) {
+                    // maneja el error aquí
+                }
+            })
+        }
+    }
+
+    private fun validateKey(response: Hangman?, imageButton: ImageButton) {
+        if (response != null) {
+            if (incorrectAttempts < response.incorrectGuesses.toInt()) {
+                imageButton.setColorFilter(
+                    0xFFFF0000.toInt(),
+                    PorterDuff.Mode.ADD
+                )
+                incorrectAttempts = response.incorrectGuesses.toInt()
+
+                if (incorrectAttempts >= maxAttempts) {
+                    //Popup de si quieres continuar viendo publicidad. Si acepta, maxTry++, si no
+                    //muestra pantalla de "has perdido" con la palabra correcta
+
+                } else binding.hangmanText.text =
+                    hangmanGame?.hangman ?: "404: Not found"
+            } else imageButton.setColorFilter(
+                0xFF00FF00.toInt(),
+                PorterDuff.Mode.ADD
+            )
+            binding.hangmanText.text =
+                hangmanGame?.hangman ?: "404: Not found"
+
+            if(hangmanGame?.hangman ?: "404: Not found" == hangmanGame?.solution ?: "404: Not found"){
+                //Muestra pantalla de victoria con la palabra correcta
+            }
+        } else binding.hangmanText.text =
+            hangmanGame?.solution ?: "404: Not found"
     }
 
     fun UpdateCharacter() {
@@ -128,4 +335,8 @@ class GameActivity : AppCompatActivity() {
     fun Timer() {
         //TODO (Needs implementation)
     }
+}
+
+private fun <T> Call<T>?.enqueue(callback: Callback<Hangman>) {
+
 }
